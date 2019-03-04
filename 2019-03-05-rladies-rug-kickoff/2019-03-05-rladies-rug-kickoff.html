@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Opinionated Strategies for Uncharted Territories</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Sharla Gelfand" />
+    <meta name="date" content="2019-03-05" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Opinionated Strategies for Uncharted Territories
+## R-Ladies / RUG Kickoff
+### Sharla Gelfand
+### March 5, 2019
+
+---
+
+
+
+
+# About me
+
+.pull-left[
+Statistician at the College of Nurses of Ontario.
+
+R user for almost 10 years.
+
+Twitter: @sharlagelfand
+
+Blog: [sharla.party](https://sharla.party)
+
+Slides:
+
+]
+
+.pull-right[
+![](https://pbs.twimg.com/media/Dz37FI3XgAAe-sQ.jpg)
+*Vicky Leta / Mashable*
+]
+
+---
+class: center, middle
+
+![](ttc-delays-news.png)
+*[https://www.cbc.ca/news/canada/toronto/ttc-trespassing-campaign-1.5011407](https://www.cbc.ca/news/canada/toronto/ttc-trespassing-campaign-1.5011407)* 
+
+???
+
+Campaign - don't go on tracks to get items
+
+Not worth your life
+
+Unauthorized people at trakc level causes 26 hours of delays in 2018
+
+---
+layout: true
+# TTC Delays
+
+---
+
+How did this "unauthorized person on track level" delay vary from line to line?
+
+What are the other main causes of delays?
+
+2018 delays available from [Toronto Open Data](https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/transportation/#917dd033-1fe5-4ba8-04ca-f683eec89761).
+
+Let's answer some of my questions and go over some strategies about how to work with a new data set.
+
+---
+
+
+
+
+```r
+head(delays)
+```
+
+```
+## # A tibble: 6 x 8
+##   date       time  station               code  description                 
+##   &lt;date&gt;     &lt;chr&gt; &lt;chr&gt;                 &lt;chr&gt; &lt;chr&gt;                       
+## 1 2018-04-01 00:27 ST GEORGE BD STATION  MUSAN Unsanitary Vehicle          
+## 2 2018-04-01 07:56 FINCH STATION         TUSC  Operator Overspeeding       
+## 3 2018-04-01 08:00 YONGE UNIVERSITY LINE MUO   Miscellaneous Other         
+## 4 2018-04-01 09:50 KIPLING STATION       TUSC  Operator Overspeeding       
+## 5 2018-04-01 10:18 VICTORIA PARK STATION MUSC  Miscellaneous Speed Control 
+## 6 2018-04-01 10:22 KENNEDY BD STATION    EUNT  Equipment - No Trouble Found
+##   min_delay bound line 
+##       &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+## 1         8 W     BD   
+## 2         0 S     YU   
+## 3         0 &lt;NA&gt;  YU   
+## 4         0 W     BD   
+## 5         0 W     BD   
+## 6         3 W     BD
+```
+
+Some qualities of this data were doctored (by me) for the purpose of Making A Point.
+
+???
+
+min_delay - Delay (in minutes) to subway service
+
+---
+
+Top 5 causes for delay along each line (YU, BD, SHP, and SRT).
+
+
+```r
+library(dplyr)
+library(ggplot2)
+
+delays %&gt;%
+  group_by(line, code) %&gt;%
+  summarise(delays = sum(min_delay)) %&gt;%
+  arrange(-delays) %&gt;%
+  slice(1:5) %&gt;%
+  ggplot(aes(x = code,
+             y = delays)) +
+  geom_col() + 
+  facet_wrap(vars(line), 
+             scales = "free_y",
+             nrow = 4) +
+  coord_flip()
+```
+
+---
+
+![](2019-03-05-rladies-rug-kickoff_files/figure-html/delays-analysis-output-1.png)&lt;!-- --&gt;
+
+Immediate issues -- other "lines", inconsistent coding.
+
+???
+
+Not what I expected, not what documentation says, inconsistent coding.
+
+---
+
+
+```r
+delays %&gt;%
+  filter(line %in% c("BD", "YU", 
+                     "SHP", "SRT")) %&gt;% 
+  ... same code as before
+```
+
+![](2019-03-05-rladies-rug-kickoff_files/figure-html/delays-main-lines-output-1.png)&lt;!-- --&gt;
+
+Where's "Unauthorized at Track Level?"
+
+---
+
+Look at delay from campaign, "Unauthorized at Track Level"
+
+--
+
+
+```r
+delays %&gt;%
+  filter(description == "Unauthorized at Track Level") %&gt;%
+  group_by(line) %&gt;%
+  summarise(delays = sum(min_delay))
+```
+
+--
+
+
+```
+## # A tibble: 4 x 2
+##   line  delays
+##   &lt;chr&gt;  &lt;dbl&gt;
+## 1 BD        NA
+## 2 SHP        7
+## 3 SRT        0
+## 4 YU        NA
+```
+
+--
+
+Easy to remove `NA`s, but lurking consequences -- top 5 delays are wrong now too (any delays with `NA` wouldn't be considered).
+
+Some issues don't raise red flags, which is the worst of all.
+
+---
+layout:false
+
+# Strategies for working with new data
+
+How can you avoid this back and forth?
+
+Nicer to know *what* kind of issues you'll have to handle.
+
+Not reliant on "doing something with a specific variable" to spot an issue with it.
+
+---
+class: center, inverse, middle
+
+# 🔍 Visual summaries 🔍
+
+Learn about your data as fast as possible.
+
+???
+
+Simple, but powerful. Learn as much as you can about your data as fast as you can. Structure and attributes.
+
+---
+
+# `visdat` package
+
+Visual overview of data structure and missingness, created by [Nick Tierney](https://www.njtierney.com/).
+
+--
+
+
+```r
+library(visdat)
+
+vis_dat(delays)
+```
+
+&lt;img src="2019-03-05-rladies-rug-kickoff_files/figure-html/visdat-delays-output-1.png" width="80%" /&gt;
+
+
+--
+
+Learn things about your data that weren't clear in the first 10 lines.
+
+---
+
+# `visdat` package
+
+
+```r
+vis_miss(delays)
+```
+
+&lt;img src="2019-03-05-rladies-rug-kickoff_files/figure-html/vismiss-delays-output-1.png" width="80%" /&gt;
+
+--
+
+What does it *mean* if `bound` is missing? Both directions? Specific `code`s?
+
+???
+
+Better understand missingness. What % of data missing, what % for each variable. 
+
+Follow up on questions by exploring data more, looking for documentation, or asking people. 
+
+If we did this first, would have known `min_delay` was missing and handled that straight away.
+
+---
+
+# Variable summaries
+
+Attributes and possible values of each variable.
+
+--
+
+
+```r
+summary(delays[["min_delay"]])
+```
+
+--
+
+
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+##   0.000   0.000   0.000   2.345   3.000 515.000    1036
+```
+
+--
+
+
+```r
+summary(delays[["line"]])
+```
+
+--
+
+
+```
+##    Length     Class      Mode 
+##     20735 character character
+```
+
+--
+
+`summary()` is very general. Sometimes it contains good information, sometimes it doesn't tell you anything at all.
+
+---
+
+# `skimr` package
+
+Gives summary statistics that you can quickly *skim* to understand your data, maintained by [Elin Waring](https://elinwaring.org/) and [Michael Quinn](http://michaelquinn32.github.io/).
+
+--
+
+Conforms to the principle of least surprise:
+
+* Design should match the user's experience, expectations, and mental models.
+
+--
+
+* If it doesn't, you should find out quickly!
+
+--
+
+Good way to develop a mental model if you *don't* have one.
+
+???
+
+Shows summary statistics for each variable, separated by class.
+
+---
+
+
+```r
+library(skimr)
+
+skim(delays)
+```
+
+--
+
+
+```
+## Skim summary statistics
+##  n obs: 20735 
+##  n variables: 8 
+## 
+## ── Variable type:character ────────────────────────────────────────
+##     variable missing complete     n min max empty n_unique
+##        bound    4698    16037 20735   1   1     0        6
+##         code       0    20735 20735   3   5     0      184
+##  description     462    20273 20735   4  58     0      132
+##         line     101    20634 20735   2  11     0       13
+##      station       0    20735 20735   8  22     0      201
+##         time       0    20735 20735   5   5     0     1388
+## 
+## ── Variable type:Date ─────────────────────────────────────────────
+##  variable missing complete     n        min        max     median n_unique
+##      date       0    20735 20735 2018-01-01 2018-12-31 2018-07-05      365
+## 
+## ── Variable type:numeric ──────────────────────────────────────────
+##   variable missing complete     n mean   sd p0 p25 p50 p75 p100     hist
+##  min_delay    1036    19699 20735 2.34 8.62  0   0   0   3  515 ▇▁▁▁▁▁▁▁
+```
+
+The results are surprising, but good to know *now* instead of post iffy analysis.
+
+???
+
+Review output of each type, point out:
+
+* 6 unique values of bound
+* Lines
+* Stations
+* Range for min_delay and min_gap
+
+Friendlier to find out now than when you have weird results and have to figure out why.
+
+---
+
+# `skimr` package
+
+What are the different values of `bound`, for each `line`?
+
+
+
+```r
+delays %&gt;%
+  filter(line %in% c("BD", "B/D", "YU", "SHP", "SRT")) %&gt;%
+  mutate(bound = as.factor(bound)) %&gt;%
+  group_by(line) %&gt;%
+  skim(bound)
+```
+
+--
+
+
+```
+## Skim summary statistics
+##  n obs: 20254 
+##  n variables: 8 
+##  group variables: line 
+## 
+## ── Variable type:factor ───────────────────────────────────────────
+##  line variable missing complete    n n_unique
+##    BD    bound    1902     7217 9119        5
+##   SHP    bound     107      405  512        3
+##   SRT    bound     173      544  717        5
+##    YU    bound    2055     7851 9906        6
+##                         top_counts ordered
+##  W: 3657, E: 3543, NA: 1902, N: 10   FALSE
+##      W: 219, E: 185, NA: 107, N: 1   FALSE
+##      S: 271, N: 261, NA: 173, E: 5   FALSE
+##  S: 4064, N: 3763, NA: 2055, E: 14   FALSE
+```
+
+???
+
+initial skim points us in direction of other things to investigate 
+
+skim within group, factor is good, select a single line
+
+bd is east/west, but some north delays. yu is north south, some east. was bound coded incorrectly? or maybe line? if delay at bloor/yonge. 
+
+---
+# Visual summaries
+
+Help to verify or develop a mental model.
+
+--
+
+Highlight inconsitenies, indicate areas for further investigation.
+
+--
+
+Reliant on a person (you) looking at output.
+
+--
+
+(And remembering what you're looking for).
+
+--
+
+(And not leaving the project or your job).
+
+---
+class: middle, center, inverse
+
+# 🗣 Opinionated strategies 🗣 
+
+Codify assumptions so that your analysis fails if they're not met.
+
+???
+
+Explicit, code fails loudly and spectacularly if not met. 
+
+Better than case where assumptions not met but analysis looks "ok"
+
+---
+
+# `assertr` package
+
+Verify assumptions about data *early* in a pipeline. Created by Tony Fischetti.
+
+--
+
+Forces you to outline assumptions about data, and alerts you of any deviations.
+
+--
+
+Can help save you from the case where an analysis "look okay" but produces inaccurate results.
+
+---
+layout:true
+# `assertr` package
+
+---
+
+Use `assert()` for assumptions about columns of a data set.
+
+--
+
+Throws an error and stops execution if the assumptions are violated.
+
+--
+
+Returns original data set if assumptions are met.
+
+--
+
+Let's say I assume `line` is YU, BD, SHP, or SRT.
+
+--
+
+
+```r
+library(assertr)
+
+delays %&gt;%
+  assert(in_set("YU", "BD", "SHP", "SRT"), line)
+```
+
+--
+
+
+```
+## Column 'line' violates assertion 'in_set("YU", "BD", "SHP", "SRT")' 380 times
+##     verb redux_fn                        predicate column index value
+## 1 assert       NA in_set("YU", "BD", "SHP", "SRT")   line    27 YU/BD
+## 2 assert       NA in_set("YU", "BD", "SHP", "SRT")   line    71 YU/BD
+## 3 assert       NA in_set("YU", "BD", "SHP", "SRT")   line   121 YU/BD
+## 4 assert       NA in_set("YU", "BD", "SHP", "SRT")   line   160 YU/BD
+## 5 assert       NA in_set("YU", "BD", "SHP", "SRT")   line   180 YU/BD
+##   [omitted 375 rows]
+```
+
+```
+## Error: assertr stopped execution
+```
+
+???
+
+returns an error that the assertion was violated 3443 times
+
+shows the first few lines where this is true (with `index` as the row number)
+
+values that violate that assumption
+
+---
+
+.center[
+![](predicate-gator.jpg)
+
+*Mrs. Decatur's Little Gators*
+]
+
+--
+
+`in_set("YU", "BD", "SHP", "SRT")` says that the subject, `line`, only has values in the set "YU", "BD", "SHP", "SRT".
+
+???
+
+predicate says something about the properies or actions of a subject. says what values line takes on.
+
+
+---
+
+`in_set()`: checks that each value is within a set.
+
+--
+
+`within_bounds()`: checks that each numeric value is within the bounds
+
+
+```r
+delays %&gt;%
+  assert(within_bounds(0, Inf), min_delay)
+```
+
+--
+
+
+```
+## # A tibble: 20,735 x 8
+##    date       time  station               code 
+##    &lt;date&gt;     &lt;chr&gt; &lt;chr&gt;                 &lt;chr&gt;
+##  1 2018-04-01 00:27 ST GEORGE BD STATION  MUSAN
+##  2 2018-04-01 07:56 FINCH STATION         TUSC 
+##  3 2018-04-01 08:00 YONGE UNIVERSITY LINE MUO  
+##  4 2018-04-01 09:50 KIPLING STATION       TUSC 
+##  5 2018-04-01 10:18 VICTORIA PARK STATION MUSC 
+##  6 2018-04-01 10:22 KENNEDY BD STATION    EUNT 
+##  7 2018-04-01 10:30 WILSON STATION        PUMEL
+##  8 2018-04-01 11:20 WILSON STATION        TUSC 
+##  9 2018-04-01 11:32 FINCH WEST STATION    MUIRS
+## 10 2018-04-01 12:00 JANE STATION          TUSC 
+##    description                                                min_delay
+##    &lt;chr&gt;                                                          &lt;dbl&gt;
+##  1 Unsanitary Vehicle                                                 8
+##  2 Operator Overspeeding                                              0
+##  3 Miscellaneous Other                                                0
+##  4 Operator Overspeeding                                              0
+##  5 Miscellaneous Speed Control                                        0
+##  6 Equipment - No Trouble Found                                       3
+##  7 Escalator/Elevator Incident                                        0
+##  8 Operator Overspeeding                                              0
+##  9 Injured or ill Customer (In Station) - Medical Aid Refused         0
+## 10 Operator Overspeeding                                              0
+##    bound line 
+##    &lt;chr&gt; &lt;chr&gt;
+##  1 W     BD   
+##  2 S     YU   
+##  3 &lt;NA&gt;  YU   
+##  4 W     BD   
+##  5 W     BD   
+##  6 W     BD   
+##  7 &lt;NA&gt;  YU   
+##  8 S     YU   
+##  9 &lt;NA&gt;  YU   
+## 10 W     BD   
+## # … with 20,725 more rows
+```
+
+(It allows `NA`s by default)
+
+---
+
+`not_na()`: checks that each element is not NA.
+
+
+```r
+delays %&gt;%
+  assert(not_na, min_delay)
+```
+
+```
+## Column 'min_delay' violates assertion 'not_na' 1036 times
+##     verb redux_fn predicate    column index value
+## 1 assert       NA    not_na min_delay    24    NA
+## 2 assert       NA    not_na min_delay    87    NA
+## 3 assert       NA    not_na min_delay    99    NA
+## 4 assert       NA    not_na min_delay   124    NA
+## 5 assert       NA    not_na min_delay   135    NA
+##   [omitted 1031 rows]
+```
+
+```
+## Error: assertr stopped execution
+```
+
+--
+
+`is_uniq()`: checks if each value is unique; useful for IDs.
+
+--
+
+DIY! write a function that returns TRUE/FALSE.
+
+???
+
+could have used within_bounds() without na and ALSO used not_na() to check separately, e.g. not negative but also not missing
+
+---
+
+`assertr` functions are designed to be piped together.
+
+By default, the first deviation will stop the pipe and return errors.
+
+--
+
+
+```r
+delays %&gt;%
+  assert(in_set("YU", "BD", "SHP", "SRT"), line) %&gt;%
+  assert(within_bounds(0, Inf), min_delay) %&gt;%
+  assert(not_na, min_delay)
+```
+
+--
+
+
+```
+## Column 'line' violates assertion 'in_set("YU", "BD", "SHP", "SRT")' 380 times
+##     verb redux_fn                        predicate column index value
+## 1 assert       NA in_set("YU", "BD", "SHP", "SRT")   line    27 YU/BD
+## 2 assert       NA in_set("YU", "BD", "SHP", "SRT")   line    71 YU/BD
+## 3 assert       NA in_set("YU", "BD", "SHP", "SRT")   line   121 YU/BD
+## 4 assert       NA in_set("YU", "BD", "SHP", "SRT")   line   160 YU/BD
+## 5 assert       NA in_set("YU", "BD", "SHP", "SRT")   line   180 YU/BD
+##   [omitted 375 rows]
+```
+
+```
+## Error: assertr stopped execution
+```
+
+--
+
+Only names one violation.
+
+---
+
+Use `chain_start()` and `chain_end()` to get all errors.
+
+--
+
+
+```r
+delays %&gt;%
+  chain_start() %&gt;%
+  assert(in_set("YU", "BD", "SHP", "SRT"), line) %&gt;%
+  assert(within_bounds(0, Inf), min_delay) %&gt;%
+  assert(not_na, min_delay) %&gt;%
+  chain_end()
+```
+
+--
+
+
+```
+## There are 1416 errors across 2 verbs:
+## - 
+##       verb redux_fn                        predicate column index
+## 1   assert       NA in_set("YU", "BD", "SHP", "SRT")   line    27
+## 2   assert       NA in_set("YU", "BD", "SHP", "SRT")   line    71
+## 3   assert       NA in_set("YU", "BD", "SHP", "SRT")   line   121
+## 4   assert       NA in_set("YU", "BD", "SHP", "SRT")   line   160
+## 5   assert       NA in_set("YU", "BD", "SHP", "SRT")   line   180
+## 6   assert       NA in_set("YU", "BD", "SHP", "SRT")   line   250
+## 7   assert       NA in_set("YU", "BD", "SHP", "SRT")   line   311
+## 8   assert       NA in_set("YU", "BD", "SHP", "SRT")   line   352
+## 9   assert       NA in_set("YU", "BD", "SHP", "SRT")   line   391
+## 10  assert       NA in_set("YU", "BD", "SHP", "SRT")   line   415
+## 11  assert       NA in_set("YU", "BD", "SHP", "SRT")   line   455
+## 12  assert       NA in_set("YU", "BD", "SHP", "SRT")   line   462
+## 13  assert       NA in_set("YU", "BD", "SHP", "SRT")   line   508
+## 14  assert       NA in_set("YU", "BD", "SHP", "SRT")   line   559
+## 15  assert       NA in_set("YU", "BD", "SHP", "SRT")   line   600
+## 16  assert       NA in_set("YU", "BD", "SHP", "SRT")   line   654
+## 17  assert       NA in_set("YU", "BD", "SHP", "SRT")   line   701
+## 18  assert       NA in_set("YU", "BD", "SHP", "SRT")   line   819
+## 19  assert       NA in_set("YU", "BD", "SHP", "SRT")   line   869
+## 20  assert       NA in_set("YU", "BD", "SHP", "SRT")   line   980
+## 21  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1102
+## 22  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1158
+## 23  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1216
+## 24  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1291
+## 25  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1348
+## 26  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1415
+## 27  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1464
+## 28  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1505
+## 29  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1591
+## 30  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1662
+## 31  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1731
+## 32  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1766
+## 33  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1809
+## 34  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1857
+## 35  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1867
+## 36  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1912
+## 37  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  1965
+## 38  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2003
+## 39  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2069
+## 40  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2147
+## 41  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2194
+## 42  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2244
+## 43  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2279
+## 44  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2314
+## 45  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2371
+## 46  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2429
+## 47  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2475
+## 48  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2513
+## 49  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2543
+## 50  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2581
+## 51  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2650
+## 52  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2695
+## 53  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2754
+## 54  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2807
+## 55  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2846
+## 56  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2891
+## 57  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  2941
+## 58  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3001
+## 59  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3064
+## 60  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3118
+## 61  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3183
+## 62  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3228
+## 63  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3263
+## 64  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3327
+## 65  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3383
+## 66  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3443
+## 67  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3507
+## 68  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3538
+## 69  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3572
+## 70  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3604
+## 71  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3670
+## 72  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3723
+## 73  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3795
+## 74  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3877
+## 75  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3929
+## 76  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  3973
+## 77  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4006
+## 78  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4066
+## 79  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4122
+## 80  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4182
+## 81  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4224
+## 82  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4275
+## 83  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4325
+## 84  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4348
+## 85  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4407
+## 86  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4475
+## 87  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4534
+## 88  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4595
+## 89  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4640
+## 90  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4734
+## 91  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4801
+## 92  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4864
+## 93  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4947
+## 94  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4961
+## 95  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  4964
+## 96  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5037
+## 97  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5091
+## 98  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5143
+## 99  assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5210
+## 100 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5288
+## 101 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5365
+## 102 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5414
+## 103 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5453
+## 104 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5520
+## 105 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5580
+## 106 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5636
+## 107 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5696
+## 108 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5748
+## 109 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5795
+## 110 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5830
+## 111 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5932
+## 112 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  5989
+## 113 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6029
+## 114 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6089
+## 115 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6134
+## 116 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6177
+## 117 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6247
+## 118 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6317
+## 119 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6379
+## 120 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6444
+## 121 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6516
+## 122 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6536
+## 123 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6561
+## 124 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6573
+## 125 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6681
+## 126 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6726
+## 127 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6770
+## 128 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6857
+## 129 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6934
+## 130 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  6995
+## 131 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7068
+## 132 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7111
+## 133 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7152
+## 134 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7212
+## 135 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7277
+## 136 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7344
+## 137 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7416
+## 138 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7479
+## 139 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7586
+## 140 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7650
+## 141 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7716
+## 142 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7800
+## 143 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7865
+## 144 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7884
+## 145 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7931
+## 146 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  7980
+## 147 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8024
+## 148 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8108
+## 149 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8178
+## 150 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8179
+## 151 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8247
+## 152 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8314
+## 153 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8381
+## 154 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8442
+## 155 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8447
+## 156 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8511
+## 157 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8552
+## 158 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8586
+## 159 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8668
+## 160 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8746
+## 161 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8814
+## 162 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8878
+## 163 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8947
+## 164 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  8990
+## 165 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  9020
+## 166 assert       NA in_set("YU", "BD", "SHP", "SRT")   line  9094
+##          value
+## 1        YU/BD
+## 2        YU/BD
+## 3        YU/BD
+## 4        YU/BD
+## 5        YU/BD
+## 6        YU/BD
+## 7        YU/BD
+## 8        YU/BD
+## 9        YU/BD
+## 10         999
+## 11       YU/BD
+## 12       YU/BD
+## 13       YU/BD
+## 14       YU/BD
+## 15       YU/BD
+## 16       YU/BD
+## 17       YU/BD
+## 18       YU/BD
+## 19       YU/BD
+## 20       YU/BD
+## 21       YU/BD
+## 22       YU/BD
+## 23       YU/BD
+## 24       YU/BD
+## 25       YU/BD
+## 26       YU/BD
+## 27       YU/BD
+## 28       YU/BD
+## 29       YU/BD
+## 30       YU/BD
+## 31       YU/BD
+## 32       YU/BD
+## 33       YU/BD
+## 34       YU/BD
+## 35       YU/BD
+## 36       YU/BD
+## 37       YU/BD
+## 38       YU/BD
+## 39      YU/ BD
+## 40       YU/BD
+## 41       YU/BD
+## 42       YU/BD
+## 43         999
+## 44       YU/BD
+## 45       YU/BD
+## 46       BD/YU
+## 47       YU/BD
+## 48       YU/BD
+## 49       YU/BD
+## 50       YU/BD
+## 51       YU/BD
+## 52       YU/BD
+## 53       YU/BD
+## 54       YU/BD
+## 55       YU/BD
+## 56       YU/BD
+## 57       YU/BD
+## 58       YU/BD
+## 59       YU/BD
+## 60       YU/BD
+## 61       YU/BD
+## 62       YU/BD
+## 63       YU/BD
+## 64       YU/BD
+## 65       YU/BD
+## 66       YU/BD
+## 67       YU/BD
+## 68       YU/BD
+## 69       YU/BD
+## 70       YU/BD
+## 71       YU/BD
+## 72       YU/BD
+## 73       YU/BD
+## 74       YU/BD
+## 75       YU/BD
+## 76       YU/BD
+## 77       YU/BD
+## 78       YU/BD
+## 79       YU/BD
+## 80       YU/BD
+## 81       YU/BD
+## 82       YU/BD
+## 83       YU/BD
+## 84       YU-BD
+## 85       YU/BD
+## 86       YU/BD
+## 87       YU/BD
+## 88       YU/BD
+## 89       YU/BD
+## 90       YU/BD
+## 91       YU/BD
+## 92       YU/BD
+## 93       YU/BD
+## 94  16 MCCOWAN
+## 95       YU/BD
+## 96       YU/BD
+## 97       YU/BD
+## 98       YU/BD
+## 99       YU/BD
+## 100      YU/BD
+## 101      YU/BD
+## 102      YU/BD
+## 103      YU/BD
+## 104      YU/BD
+## 105      YU/BD
+## 106      YU/BD
+## 107      YU/BD
+## 108      YU/BD
+## 109      YU/BD
+## 110      YU/BD
+## 111      YU/BD
+## 112      YU/BD
+## 113      YU/BD
+## 114      YU/BD
+## 115      YU/BD
+## 116      YU/BD
+## 117      YU/BD
+## 118      YU/BD
+## 119      YU/BD
+## 120      YU/BD
+## 121      YU/BD
+## 122        999
+## 123      YU/BD
+## 124      YU/BD
+## 125      YU/BD
+## 126      YU/BD
+## 127      YU/BD
+## 128      YU/BD
+## 129      YU/BD
+## 130      YU/BD
+## 131      YU/BD
+## 132      YU/BD
+## 133      YU/BD
+## 134      YU/BD
+## 135      YU/BD
+## 136      YU/BD
+## 137      YU/BD
+## 138      YU/BD
+## 139      YU/BD
+## 140      YU/BD
+## 141      YU/BD
+## 142      YU/BD
+## 143      YU/BD
+## 144      YU/BD
+## 145      YU/BD
+## 146      YU/BD
+## 147      YU/BD
+## 148      YU/BD
+## 149      YU/BD
+## 150      YU/BD
+## 151      YU/BD
+## 152      YU/BD
+## 153      YU/BD
+## 154      YU/BD
+## 155      YU/BD
+## 156      YU/BD
+## 157      YU/BD
+## 158      YU/BD
+## 159      YU/BD
+## 160      YU/BD
+## 161      YU/BD
+## 162      YU/BD
+## 163      YU/BD
+## 164      YU/BD
+## 165      YU/BD
+## 166      YU/BD
+##  [ reached 'max' / getOption("max.print") -- omitted 1250 rows ]
+```
+
+```
+## Error: assertr stopped execution
+```
+
+???
+
+overwrite default behaviour, append information about *all* errors
+
+---
+
+When all assumptions are satisfied, the result is just the original data set.
+
+It can be piped directly for analysis. 
+
+--
+
+
+
+
+```r
+delays_clean %&gt;% 
+  chain_start() %&gt;%
+  assert(in_set("YU", "BD", "SHP", "SRT"), line) %&gt;%
+  assert(within_bounds(0, Inf), min_delay) %&gt;%
+  assert(not_na, min_delay) %&gt;%
+  chain_end() %&gt;%
+  group_by(line, description) %&gt;%
+  summarise(delays = sum(min_delay)) %&gt;%
+  arrange(-delays) %&gt;%
+  slice(1:5) %&gt;%
+  ggplot(aes(x = description,
+             y = delays)) +
+  geom_col() + 
+  facet_wrap(vars(line), 
+             scales = "fixed",
+             nrow = 1) +
+  coord_flip()
+```
+
+---
+
+&lt;img src="2019-03-05-rladies-rug-kickoff_files/figure-html/asumptions-met-plot-output-1.png" width="100%" /&gt;
+
+--
+
+Where's "Unauthorized at trak level"? 🤔
+
+---
+layout:false
+
+# Wrapping up
+
+🏊‍♂️ Be weary of diving right into results.
+
+--
+
+🔍 Efficiently visualize your data to verify or build mental motels.
+
+--
+
+🕳 Be liberal with rabit holes, investigations, and edge cases.
+
+--
+
+🗣 Codify your assumptions so that it is them, not you, who fail spectacularly!
+
+---
+
+# Thanks!
+
+[Toronto Open Data](https://www.toronto.ca/city-government/data-research-maps/open-data/)
+
+[`visdat` package vignette](http://visdat.njtierney.com/articles/using_visdat.html)
+
+[`skimr` package vignette](https://cran.r-project.org/web/packages/skimr/vignettes/Using_skimr.html)
+
+[`assertr` package vignette](https://cran.r-project.org/web/packages/assertr/vignettes/assertr.html)
+
+[ROpensci](https://ropensci.org/)
+
+Slides:
+
+Twitter: @sharlagelfand
+    </textarea>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
