@@ -51,7 +51,7 @@ Campaign - don't go on tracks to get items
 
 Not worth your life
 
-Unauthorized people at trakc level causes 26 hours of delays in 2018
+Unauthorized people at track level causes 26 hours of delays in 2018
 
 ---
 layout: true
@@ -394,7 +394,7 @@ Help to verify or develop a mental model.
 
 --
 
-Highlight inconsitenies, indicate areas for further investigation.
+Highlight inconsistencies, indicate areas for further investigation.
 
 --
 
@@ -425,7 +425,7 @@ Better than case where assumptions not met but analysis looks "ok"
 
 # `assertr` package
 
-Verify assumptions about data *early* in a pipeline. Created by Tony Fischetti.
+Verify assumptions about data *early* in a pipeline. Created by [Tony Fischetti](http://www.onthelambda.com/).
 
 --
 
@@ -491,7 +491,7 @@ values that violate that assumption
 
 ???
 
-predicate says something about the properies or actions of a subject. says what values line takes on.
+predicate says something about the properties or actions of a subject. says what values line takes on.
 
 
 ---
@@ -631,7 +631,7 @@ delays_clean %>%
 
 --
 
-Where's "Unauthorized at trak level"? `r emo::ji("thinking")`
+Where's "Unauthorized at track level"? `r emo::ji("thinking")`
 
 ---
 layout:false
@@ -642,11 +642,11 @@ layout:false
 
 --
 
-`r emo::ji("mag")` Efficiently visualize your data to verify or build mental motels.
+`r emo::ji("mag")` Efficiently visualize your data to verify or build mental models.
 
 --
 
-`r emo::ji("hole")` Be liberal with rabit holes, investigations, and edge cases.
+`r emo::ji("hole")` Be liberal with rabbit holes, investigations, and edge cases.
 
 --
 
