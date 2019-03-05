@@ -30,7 +30,7 @@ Twitter: @sharlagelfand
 
 Blog: [sharla.party](https://sharla.party)
 
-Slides:
+Slides: [bit.ly/rladies-to-kickoff](http://bit.ly/rladies-to-kickoff)
 
 ]
 
@@ -249,7 +249,7 @@ delays %>%
   theme(axis.text.x = element_text(angle = 45, hjust = 0))
 ```
 
-Learn things about your data that weren't clear in the first 5 lines.
+Learn things about your data that weren't clear in the first few lines.
 
 ---
 
@@ -614,7 +614,7 @@ delays_clean %>%
 
 --
 
-Where's "Unauthorized at track level"? `r emo::ji("thinking")`
+Where's "Unauthorized at Track Level"? `r emo::ji("thinking")`
 
 ---
 layout:false
@@ -641,7 +641,7 @@ Toronto Open Data: [bit.ly/toronto-open-data](http://bit.ly/toronto-open-data)
 
 `assertr` package vignette: [bit.ly/assertr-docs](http://bit.ly/assertr-docs)
 
-Slides:
+Slides: [bit.ly/rladies-to-kickoff](http://bit.ly/rladies-to-kickoff)
 
 Twitter: @sharlagelfand
 
