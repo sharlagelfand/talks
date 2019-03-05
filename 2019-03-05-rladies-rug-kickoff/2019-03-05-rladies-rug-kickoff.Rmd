@@ -633,15 +633,13 @@ layout:false
 
 # Thanks!
 
-[Toronto Open Data](https://www.toronto.ca/city-government/data-research-maps/open-data/)
+Toronto Open Data: [bit.ly/toronto-open-data](http://bit.ly/toronto-open-data)
 
-[`visdat` package vignette](http://visdat.njtierney.com/articles/using_visdat.html)
+`visdat` package vignette: [bit.ly/visdat-docs](http://bit.ly/visdat-docs)
 
-[`skimr` package vignette](https://cran.r-project.org/web/packages/skimr/vignettes/Using_skimr.html)
+`skimr` package vignette: [bit.ly/skimr-docs](http://bit.ly/skimr-docs)
 
-[`assertr` package vignette](https://cran.r-project.org/web/packages/assertr/vignettes/assertr.html)
-
-[ROpensci](https://ropensci.org/)
+`assertr` package vignette: [bit.ly/assertr-docs](http://bit.ly/assertr-docs)
 
 Slides:
 
