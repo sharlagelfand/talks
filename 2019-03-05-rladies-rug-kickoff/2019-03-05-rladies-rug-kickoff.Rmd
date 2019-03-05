@@ -63,7 +63,7 @@ How did this "unauthorized person on track level" delay vary from line to line?
 
 What are the other main causes of delays?
 
-2018 delays available from [Toronto Open Data](https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/transportation/#917dd033-1fe5-4ba8-04ca-f683eec89761).
+2018 TTC delays available from [Toronto Open Data](https://www.toronto.ca/city-government/data-research-maps/open-data/open-data-catalogue/transportation/#917dd033-1fe5-4ba8-04ca-f683eec89761).
 
 Let's answer some of my questions and go over some strategies about how to work with a new data set.
 
@@ -105,6 +105,8 @@ delays <- delays_clean %>%
 ```{r delays}
 head(delays)
 ```
+
+--
 
 Some qualities of this data were doctored (by me) for the purpose of Making A Point.
 
@@ -149,7 +151,7 @@ Not what I expected, not what documentation says, inconsistent coding.
 
 ```{r delays-main-lines, eval=FALSE}
 delays %>%
-  filter(line %in% c("BD", "YU", 
+  filter(line %in% c("YU", "YU", 
                      "SHP", "SRT")) %>% 
   ... same code as before
 ```
@@ -173,6 +175,8 @@ delays %>%
   theme(axis.text.x = element_blank(),
         axis.title = element_blank())
 ```
+
+--
 
 Where's "Unauthorized at Track Level?"
 
@@ -245,10 +249,7 @@ delays %>%
   theme(axis.text.x = element_text(angle = 45, hjust = 0))
 ```
 
-
---
-
-Learn things about your data that weren't clear in the first 10 lines.
+Learn things about your data that weren't clear in the first 5 lines.
 
 ---
 
@@ -346,6 +347,8 @@ skim(delays)
 ```{r delays-skim-output, ref.label="delays-skim", echo=FALSE}
 ```
 
+--
+
 The results are surprising, but good to know *now* instead of post iffy analysis.
 
 ???
@@ -392,19 +395,13 @@ bd is east/west, but some north delays. yu is north south, some east. was bound 
 
 Help to verify or develop a mental model.
 
---
-
 Highlight inconsistencies, indicate areas for further investigation.
 
 --
 
 Reliant on a person (you) looking at output.
 
---
-
 (And remembering what you're looking for).
-
---
 
 (And not leaving the project or your job).
 
@@ -427,11 +424,7 @@ Better than case where assumptions not met but analysis looks "ok"
 
 Verify assumptions about data *early* in a pipeline. Created by [Tony Fischetti](http://www.onthelambda.com/).
 
---
-
 Forces you to outline assumptions about data, and alerts you of any deviations.
-
---
 
 Can help save you from the case where an analysis "look okay" but produces inaccurate results.
 
@@ -443,19 +436,13 @@ layout:true
 
 Use `assert()` for assumptions about columns of a data set.
 
---
-
 Throws an error and stops execution if the assumptions are violated.
-
---
 
 Returns original data set if assumptions are met.
 
 --
 
 Let's say I assume `line` is YU, BD, SHP, or SRT.
-
---
 
 ```{r assert-line, eval=FALSE}
 library(assertr)
@@ -512,8 +499,6 @@ delays %>%
 ```{r min-delay-positive-out, error=TRUE, echo=FALSE, ref.label = "min-delay-positive"}
 ```
 
-(It allows `NA`s by default)
-
 ---
 
 `not_na()`: checks that each element is not NA.
@@ -554,8 +539,6 @@ delays %>%
 
 ```{r assert-chain-fail-outout, echo=FALSE, error=TRUE, ref.label="assert-chain-fail"}
 ```
-
---
 
 Only names one violation.
 
@@ -640,15 +623,9 @@ layout:false
 
 `r emo::ji("swim")` Be weary of diving right into results.
 
---
-
 `r emo::ji("mag")` Efficiently visualize your data to verify or build mental models.
 
---
-
 `r emo::ji("hole")` Be liberal with rabbit holes, investigations, and edge cases.
-
---
 
 `r emo::ji("speaking_head")` Codify your assumptions so that it is them, not you, who fail spectacularly!
 
