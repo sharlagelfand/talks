@@ -59,7 +59,7 @@ layout: true
 
 ---
 
-How did this "unauthorized person on track level" delay vary from line to line?
+How did this "Unauthorized at track level" delay vary from line to line?
 
 What are the other main causes of delays?
 
@@ -371,7 +371,7 @@ What are the different values of `bound`, for each `line`?
 
 ```{r skim-delays-bound-line, eval=FALSE}
 delays %>%
-  filter(line %in% c("BD", "B/D", "YU", "SHP", "SRT")) %>%
+  filter(line %in% c("BD", "YU", "SHP", "SRT")) %>%
   mutate(bound = as.factor(bound)) %>%
   group_by(line) %>%
   skim(bound)
