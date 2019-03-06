@@ -45,14 +45,6 @@ class: center, middle
 ![](ttc-delays-news.png)
 *[https://www.cbc.ca/news/canada/toronto/ttc-trespassing-campaign-1.5011407](https://www.cbc.ca/news/canada/toronto/ttc-trespassing-campaign-1.5011407)* 
 
-???
-
-Campaign - don't go on tracks to get items
-
-Not worth your life
-
-Unauthorized people at track level causes 26 hours of delays in 2018
-
 ---
 layout: true
 # TTC Delays
@@ -110,10 +102,6 @@ head(delays)
 
 Some qualities of this data were doctored (by me) for the purpose of Making A Point.
 
-???
-
-min_delay - Delay (in minutes) to subway service
-
 ---
 
 Top 5 causes for delay along each line (YU, BD, SHP, and SRT).
@@ -142,10 +130,6 @@ delays %>%
 ```
 
 Immediate issues -- other "lines", inconsistent coding.
-
-???
-
-Not what I expected, not what documentation says, inconsistent coding.
 
 ---
 
@@ -222,10 +206,6 @@ class: center, inverse, middle
 
 Learn about your data as fast as possible.
 
-???
-
-Simple, but powerful. Learn as much as you can about your data as fast as you can. Structure and attributes.
-
 ---
 
 # `visdat` package
@@ -269,14 +249,6 @@ delays %>%
 --
 
 What does it *mean* if `bound` is missing? Both directions? Specific `code`s?
-
-???
-
-Better understand missingness. What % of data missing, what % for each variable. 
-
-Follow up on questions by exploring data more, looking for documentation, or asking people. 
-
-If we did this first, would have known `min_delay` was missing and handled that straight away.
 
 ---
 
@@ -330,10 +302,6 @@ Conforms to the principle of least surprise:
 
 Good way to develop a mental model if you *don't* have one.
 
-???
-
-Shows summary statistics for each variable, separated by class.
-
 ---
 
 ```{r delays-skim, eval=FALSE}
@@ -350,17 +318,6 @@ skim(delays)
 --
 
 The results are surprising, but good to know *now* instead of post iffy analysis.
-
-???
-
-Review output of each type, point out:
-
-* 6 unique values of bound
-* Lines
-* Stations
-* Range for min_delay and min_gap
-
-Friendlier to find out now than when you have weird results and have to figure out why.
 
 ---
 
@@ -381,14 +338,6 @@ delays %>%
 
 ```{r skim-delays-bound-line-output, echo=FALSE, ref.label="skim-delays-bound-line"}
 ```
-
-???
-
-initial skim points us in direction of other things to investigate 
-
-skim within group, factor is good, select a single line
-
-bd is east/west, but some north delays. yu is north south, some east. was bound coded incorrectly? or maybe line? if delay at bloor/yonge. 
 
 ---
 # Visual summaries
@@ -411,12 +360,6 @@ class: middle, center, inverse
 # `r emo::ji("speaking_head")` Opinionated strategies `r emo::ji("speaking_head")` 
 
 Codify assumptions so that your analysis fails if they're not met.
-
-???
-
-Explicit, code fails loudly and spectacularly if not met. 
-
-Better than case where assumptions not met but analysis looks "ok"
 
 ---
 
@@ -456,14 +399,6 @@ delays %>%
 ```{r assert-line-output, error=TRUE, ref.label="assert-line", echo=FALSE}
 ```
 
-???
-
-returns an error that the assertion was violated 3443 times
-
-shows the first few lines where this is true (with `index` as the row number)
-
-values that violate that assumption
-
 ---
 
 .center[
@@ -475,11 +410,6 @@ values that violate that assumption
 --
 
 `in_set("YU", "BD", "SHP", "SRT")` says that the subject, `line`, only has values in the set "YU", "BD", "SHP", "SRT".
-
-???
-
-predicate says something about the properties or actions of a subject. says what values line takes on.
-
 
 ---
 
@@ -515,10 +445,6 @@ delays %>%
 --
 
 DIY! write a function that returns TRUE/FALSE.
-
-???
-
-could have used within_bounds() without na and ALSO used not_na() to check separately, e.g. not negative but also not missing
 
 ---
 
@@ -562,9 +488,6 @@ delays %>%
 ```{r assert-chain-outout, echo=FALSE, error=TRUE, ref.label="assert-chain"}
 ```
 
-???
-
-overwrite default behaviour, append information about *all* errors
 
 ---
 
