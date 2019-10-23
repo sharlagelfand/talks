@@ -1,0 +1,479 @@
+---
+title: "Practical data cleaning"
+subtitle: "Data cleaning brown bag"
+author: "Sharla Gelfand"
+date: "October 24, 2019"
+output:
+  xaringan::moon_reader:
+    css: ["default", "rladies", "rladies-fonts"]
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, dpi = 320)
+```
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">i feel like people say &quot;you&#39;ll spend 80% of your time cleaning data&quot; as if it&#39;s a bad thing, but... i actually find it really fun and satisfying <a href="https://t.co/3NPkVDleBj">pic.twitter.com/3NPkVDleBj</a></p>&mdash; Sharla Gelfand (@sharlagelfand) <a href="https://twitter.com/sharlagelfand/status/970796082769866752?ref_src=twsrc%5Etfw">March 5, 2018</a> ![](img/nerd.gif) </blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+---
+
+```{r, echo = FALSE}
+knitr::include_graphics(here::here("2019-10-24-uoft-brown-bag", "img", "tidy_ttc1a.png"))
+knitr::include_graphics(here::here("2019-10-24-uoft-brown-bag", "img", "tidy_ttc1b.png"))
+```
+
+[Tidying and mapping Toronto open data](https://sharla.party/posts/tidying-toronto-open-data/)
+
+---
+
+```{r, echo = FALSE, out.width = 600}
+knitr::include_graphics(here::here("2019-10-24-uoft-brown-bag", "img", "tidy_ttc2.png"))
+```
+
+[Tidying the TTC](https://sharla.party/posts/tidy-ttc/)
+
+---
+# Analyzing results from the 2019 Federal Election
+
+* How many seats did each party win?
+* How many ridings elected a different party in 2019 than they did in 2015?
+
+---
+class: inverse, middle, center
+
+# What do I want my data to look like when I go to use it?
+
+## (Plan out the end result)
+
+---
+
+## What should my data look like?
+
+What do I assume it will look like? What do I need?
+
+* List of ridings
+* What party won in that riding in 2015
+* What party won in that riding in 2019
+
+---
+class: inverse, middle, center
+
+# What does my data look like now?
+
+## (Assess the current state)
+
+---
+
+```{r, echo = FALSE, message = FALSE}
+library(readr)
+ridings_results_2015 <- read_csv(here::here("2019-10-24-uoft-brown-bag", "data", "table_tableau11.csv"))
+ridings_results_2019 <- read_tsv(here::here("2019-10-24-uoft-brown-bag", "data", "EventResults.txt"), skip = 1, guess_max = 2149)
+```
+
+## 2015 Election Results
+
+```{r}
+ridings_results_2015
+```
+
+---
+
+## 2015 Election Results
+
+```{r}
+library(dplyr)
+
+ridings_results_2015 <- ridings_results_2015 %>%
+  select(
+    `Electoral District Name/Nom de circonscription`,
+    `Elected Candidate/Candidat élu`
+  )
+
+head(ridings_results_2015)
+```
+
+Riding name contains English and French. Elected party is contained within elected candidate field.
+
+---
+
+## 2019 Election Results
+
+```{r}
+ridings_results_2019
+```
+
+---
+
+## 2019 Election Results
+
+```{r}
+ridings_results_2019 <- ridings_results_2019 %>%
+  select(
+    `Electoral district name`,
+    `Surname - Nom de famille`,
+    `Political affiliation`,
+    `% Votes obtained - Votes obtenus %`
+  )
+
+head(ridings_results_2019)
+```
+
+English and French riding names are separated. Results for all candidates are shown (not just the winning one).
+---
+class: inverse, middle, center
+
+# How do I get there? How do I know what I'm doing is right?
+
+## (Take things slowly. Check your answers!)
+
+---
+
+## What do we need to do?
+
+`r emo::ji("black_medium_square")` Make the data easier to work with (backticks names are a pain!)
+
+`r emo::ji("black_medium_square")` Extract the elected party from the 2015 elected official
+
+`r emo::ji("black_medium_square")` Get the elected party from the 2019 data set (the party with the highest percent of votes)
+
+`r emo::ji("black_medium_square")` Extract the English riding name from the 2015 data
+
+`r emo::ji("black_medium_square")` Ensure the ridings names from the two data sets match
+
+`r emo::ji("black_medium_square")`  Combine the two data sets
+
+---
+
+# Make the data easier to work with
+
+```{r}
+names(ridings_results_2019)
+```
+
+--
+
+```{r}
+library(janitor)
+
+ridings_results_2015 <- ridings_results_2015 %>%
+  clean_names()
+
+ridings_results_2019 <- ridings_results_2019 %>%
+  clean_names()
+
+names(ridings_results_2019)
+```
+
+---
+
+## Get the 2015 elected party out of the elected candidate
+
+```{r}
+ridings_results_2015 %>%
+  select(elected_candidate_candidat_elu)
+```
+
+---
+
+## Get the 2015 elected party out of the elected candidate
+
+Getting the party name in French would be easy - everything after the slash
+
+```{r}
+library(tidyr)
+
+ridings_results_2015 %>%
+  separate(elected_candidate_candidat_elu,
+    into = c("candidate_and_english_party", "french_party"), sep = "/"
+  ) %>%
+  count(french_party)
+```
+
+Not as easy in English.
+
+---
+
+## Get the elected party out of the elected candidate
+
+I'm not above manual recoding!
+
+```{r}
+library(stringr)
+
+ridings_results_2015 <- ridings_results_2015 %>%
+  mutate(elected_party = case_when(
+    str_detect(elected_candidate_candidat_elu, "Conservative") ~ "Conservative",
+    str_detect(elected_candidate_candidat_elu, "NDP-New Democratic Party") ~ "NDP-New Democratic Party",
+    str_detect(elected_candidate_candidat_elu, "Liberal") ~ "Liberal",
+    str_detect(elected_candidate_candidat_elu, "Bloc Québécois") ~ "Bloc Québécois",
+    str_detect(elected_candidate_candidat_elu, "Green Party") ~ "Green Party"
+  )) %>%
+  select(-elected_candidate_candidat_elu)
+
+head(ridings_results_2015)
+```
+
+---
+
+## Get the elected party out of the elected candidate
+
+Check that all values have been recoded!
+
+```{r}
+ridings_results_2015 %>%
+  count(elected_party)
+```
+
+`r emo::ji("white_check_mark")` Extract the elected party from the 2015 elected official
+
+---
+
+## Get the winning party for each 2019 riding
+
+```{r}
+ridings_results_2019
+```
+
+---
+
+## Get the winning party for each 2019 riding
+
+```{r}
+ridings_results_2019 <- ridings_results_2019 %>%
+  group_by(riding_name = electoral_district_name) %>%
+  filter(percent_votes_obtained_votes_obtenus_percent == max(percent_votes_obtained_votes_obtenus_percent)) %>%
+  ungroup() %>%
+  select(riding_name, elected_party = political_affiliation)
+
+ridings_results_2019
+```
+
+`r emo::ji("white_check_mark")` Get the elected party from the 2019 data set
+
+---
+
+## Get the English riding name out of the 2015 data
+
+```{r}
+ridings_results_2015 <- ridings_results_2015 %>%
+  separate(electoral_district_name_nom_de_circonscription,
+    into = c("riding_name"),
+    sep = "/"
+  )
+
+ridings_results_2015
+```
+
+`r emo::ji("white_check_mark")` Extract the English riding name from the 2015 data
+
+---
+
+## Where we're at:
+
+`r emo::ji("white_check_mark")` Extract the elected party from the 2015 elected official
+
+`r emo::ji("white_check_mark")` Get the elected party from the 2019 data set (the party with the highest percent of votes)
+
+`r emo::ji("white_check_mark")` Extract the English riding name from the 2015 data
+
+`r emo::ji("black_medium_square")` Ensure the ridings names from the two data sets match
+
+`r emo::ji("black_medium_square")`  Combine the two data sets
+
+---
+
+# Ensure the riding names match
+
+```{r}
+riding_results <- ridings_results_2015 %>%
+  full_join(ridings_results_2019,
+    by = "riding_name",
+    suffix = c("_2015", "_2019")
+  )
+
+riding_results
+```
+
+--
+
+What's n?
+
+---
+
+# Ensure the riding names match
+
+```{r}
+riding_results %>%
+  filter(is.na(elected_party_2015) | is.na(elected_party_2019))
+```
+
+More data cleaning required! 
+
+---
+
+# Esnure the riding names match
+
+```{r}
+ridings_results_2015 <- ridings_results_2015 %>%
+  mutate(riding_name = str_replace_all(riding_name, "--", "-")) %>%
+  arrange(riding_name)
+
+ridings_results_2019 <- ridings_results_2019 %>%
+  mutate(riding_name = str_replace_all(riding_name, "--", "-")) %>%
+  arrange(riding_name)
+
+all(ridings_results_2015[["riding_name"]] == ridings_results_2019[["riding_name"]])
+```
+
+---
+
+## Combine the 2015 and 2019 results
+
+```{r}
+riding_results <- ridings_results_2015 %>%
+  full_join(ridings_results_2019,
+    by = "riding_name",
+    suffix = c("_2015", "_2019")
+  )
+
+riding_results
+```
+
+---
+
+`r emo::ji("white_check_mark")` Extract the elected party from the 2015 elected official
+
+`r emo::ji("white_check_mark")` Get the elected party from the 2019 data set (the party with the highest percent of votes)
+
+`r emo::ji("white_check_mark")` Extract the English riding name from the 2015 data
+
+`r emo::ji("white_check_mark")` Ensure the ridings names from the two data sets match
+
+`r emo::ji("white_check_mark")`  Combine the two data sets
+
+---
+
+# How many ridings elected a different party in 2019 than they did in 2015?
+
+```{r}
+riding_results %>%
+  filter(elected_party_2015 != elected_party_2019)
+```
+
+---
+
+# How many ridings did each party win?
+
+Wide format is not condusive to plotting!
+
+```{r}
+riding_results_long <- riding_results %>%
+  pivot_longer(
+    cols = c(elected_party_2015, elected_party_2019),
+    names_to = "year",
+    names_prefix = "elected_party_",
+    values_to = "elected_party"
+  )
+
+head(riding_results_long)
+```
+
+---
+
+# How many ridings did each party win?
+
+```{r}
+ridings_won_by_party <- riding_results_long %>%
+  count(elected_party, year)
+
+ridings_won_by_party
+```
+
+---
+
+# How many ridings did each party win?
+
+```{r, fig.asp = 0.5}
+library(ggplot2)
+
+ggplot(ridings_won_by_party, aes(x = elected_party, y = n, fill = year)) +
+  geom_col(position = "dodge")
+```
+
+---
+
+# How many ridings did each party win?
+
+```{r}
+library(forcats)
+
+ridings_won_by_party <- ridings_won_by_party %>%
+  mutate(
+    elected_party = ifelse(elected_party == "NDP-New Democratic Party",
+      "NDP",
+      elected_party
+    ),
+    elected_party = as_factor(elected_party),
+    elected_party = fct_relevel(
+      elected_party, "Conservative", "Liberal", "NDP",
+      "Bloc Québécois", "Green Party", "Independent"
+    )
+  ) %>%
+  complete(year, elected_party, fill = list(n = 0))
+
+ridings_won_by_party
+```
+
+---
+
+# How many ridings did each party win?
+
+```{r ridings-won-by-party, eval = FALSE}
+ggplot(
+  ridings_won_by_party,
+  aes(
+    x = elected_party,
+    y = n,
+    fill = year
+  )
+) +
+  geom_col(position = "dodge") +
+  labs(
+    x = "Political Party",
+    y = "Number of Ridings",
+    title = "Number of ridings won by political party, 2015 versus 2019"
+  ) +
+  theme_minimal(14) +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_blank()
+  )
+```
+
+---
+
+```{r  ref.label="ridings-won-by-party", echo=FALSE, fig.asp = 0.8}
+
+```
+
+
+---
+class: inverse, middle, center
+
+# How do I make this as easy as possible?
+
+## (Reduce friction)
+
+---
+
+# I'm lazy.
+
+* Use packages that already exist
+* If there's an easy way, take it (no one is handing out medals for figuring out regular expressions)
+* Optimize for human readibility, so that you know what each step is doing.
