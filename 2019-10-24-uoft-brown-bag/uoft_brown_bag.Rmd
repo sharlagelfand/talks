@@ -140,6 +140,8 @@ ridings_results_2019 <- ridings_results_2019_raw %>%
 ridings_results_2019
 ```
 
+--
+
 English riding name only, political party is available on its own.
 
 ---
@@ -194,16 +196,26 @@ names(ridings_results_2019)
 
 --
 
-```{r, error = TRUE}
-# ridings_results_2019 %>%
-#   select(Electoral district)
+```{r space-in-names, eval = FALSE}
+ridings_results_2019 %>%
+  select(Electoral district)
 ```
 
 --
 
-```{r}
+```{r, ref.label = "space-in-names", error = TRUE, echo = FALSE}
+```
+
+--
+
+```{r backticks, eval = FALSE}
 ridings_results_2019 %>%
   select(`Electoral district`)
+```
+
+--
+
+```{r, ref.label = "backticks", echo = FALSE}
 ```
 
 ---
@@ -212,7 +224,7 @@ ridings_results_2019 %>%
 
 The [`janitor` package]() is totally `r emo::ji("bomb")` for cleaning data.
 
-```{r}
+```{r clean-names, eval = FALSE}
 library(janitor)
 
 ridings_results_2015 <- ridings_results_2015 %>%
@@ -220,12 +232,13 @@ ridings_results_2015 <- ridings_results_2015 %>%
 
 ridings_results_2019 <- ridings_results_2019 %>%
   clean_names()
+
+names(ridings_results_2019)
 ```
 
 --
 
-```{r}
-names(ridings_results_2019)
+```{r, ref.label = "clean-names", echo = FALSE}
 ```
 
 --
@@ -236,7 +249,7 @@ names(ridings_results_2019)
 
 ## Get the English riding name out of the 2015 data
 
-```{r}
+```{r english-riding-name, eval = FALSE}
 library(tidyr)
 
 ridings_results_2015 <- ridings_results_2015 %>%
@@ -244,14 +257,14 @@ ridings_results_2015 <- ridings_results_2015 %>%
     into = "riding",
     sep = "/"
   )
+
+ridings_results_2015
 ```
 
 --
 
-```{r}
-ridings_results_2015
+```{r, ref.label = "english-riding-name", echo = FALSE}
 ```
-
 
 --
 
@@ -261,7 +274,7 @@ ridings_results_2015
 
 ## Ensure the riding names match
 
-```{r}
+```{r names-match, eval = FALSE}
 ridings_results_2015 <- ridings_results_2015 %>%
   arrange(riding)
 
@@ -270,6 +283,11 @@ ridings_results_2019 <- ridings_results_2019 %>%
   arrange(riding)
 
 all(ridings_results_2015[["riding"]] == ridings_results_2019[["riding"]])
+```
+
+--
+
+```{r, ref.label = "names-match", echo = FALSE}
 ```
 
 --
@@ -325,7 +343,7 @@ ridings_results_2015 %>%
 
 Getting the party name in French would be easy - everything after the slash
 
-```{r}
+```{r french-names, eval = FALSE}
 ridings_results_2015 %>%
   separate(
     elected_candidate_candidat_elu,
@@ -335,6 +353,13 @@ ridings_results_2015 %>%
   count(french_party)
 ```
 
+--
+
+```{r, ref.label = "french-names", echo = FALSE}
+```
+
+--
+
 Not as easy in English - party names are not just the word before the slash.
 
 ---
@@ -343,7 +368,7 @@ Not as easy in English - party names are not just the word before the slash.
 
 I'm not above manual recoding!
 
-```{r}
+```{r recode-riding, eval = FALSE}
 ridings_results_2015 <- ridings_results_2015 %>%
   mutate(party = case_when(
     str_detect(elected_candidate_candidat_elu, "Conservative") ~ "Conservative",
@@ -357,15 +382,25 @@ ridings_results_2015 <- ridings_results_2015 %>%
 head(ridings_results_2015)
 ```
 
+--
+
+```{r, ref.label = "recode-riding", echo = FALSE}
+```
+
 ---
 
 ## Get the elected party out of the elected official
 
 Check that all values have been recoded
 
-```{r}
+```{r check-recode, eval = FALSE}
 ridings_results_2015 %>%
   count(party)
+```
+
+--
+
+```{r, ref.label = "check-recode", echo = FALSE}
 ```
 
 --
@@ -376,7 +411,7 @@ ridings_results_2015 %>%
 
 ## Combine the 2015 and 2019 results
 
-```{r}
+```{r combine, eval = FALSE}
 ridings_results_2019 <- ridings_results_2019 %>%
   rename(party = political_affiliation)
 
@@ -386,7 +421,12 @@ riding_results <- ridings_results_2015 %>%
     suffix = c("_2015", "_2019")
   )
 
-riding_results
+head(riding_results)
+```
+
+--
+
+```{r, ref.label = "combine", echo = FALSE}
 ```
 
 --
@@ -402,6 +442,8 @@ riding_results
 ```{r, echo=FALSE, out.width = "50%"}
 knitr::include_graphics("img/data.svg")
 ```
+
+--
 
 ### Reality
 
@@ -432,18 +474,23 @@ class: inverse, middle, center
 
 ## How many ridings elected a different party in 2019 than they did in 2015?
 
-```{r}
+```{r diff-parties, eval = FALSE}
 different_parties <- riding_results %>%
   filter(party_2015 != party_2019)
 
 different_parties
 ```
 
+--
+
+```{r, ref.label = "diff-parties", echo = FALSE}
+```
+
 ---
 
 ## How many ridings elected a different party in 2019 than they did in 2015?
 
-```{r}
+```{r party-change, eval = FALSE}
 library(glue)
 
 different_parties <- different_parties %>%
@@ -452,15 +499,25 @@ different_parties <- different_parties %>%
 different_parties["party_change"]
 ```
 
+--
+
+```{r, ref.label = "party-change", echo = FALSE}
+```
+
 ---
 
 ## How many ridings elected a different party in 2019 than they did in 2015?
 
-```{r}
+```{r party-change-tabyl, eval = FALSE}
 different_parties %>%
   tabyl(party_change) %>%
   arrange(-percent) %>%
   adorn_pct_formatting()
+```
+
+--
+
+```{r, ref.label = "party-change-tabyl", echo = FALSE}
 ```
 
 ---

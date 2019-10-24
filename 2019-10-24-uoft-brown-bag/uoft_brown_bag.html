@@ -207,6 +207,8 @@ ridings_results_2019
 ## # … with 328 more rows
 ```
 
+--
+
 English riding name only, political party is available on its own.
 
 ---
@@ -268,8 +270,18 @@ names(ridings_results_2019)
 
 
 ```r
-# ridings_results_2019 %&gt;%
-#   select(Electoral district)
+ridings_results_2019 %&gt;%
+  select(Electoral district)
+```
+
+--
+
+
+```
+## Error: &lt;text&gt;:2:20: unexpected symbol
+## 1: ridings_results_2019 %&gt;%
+## 2:   select(Electoral district
+##                       ^
 ```
 
 --
@@ -279,6 +291,9 @@ names(ridings_results_2019)
 ridings_results_2019 %&gt;%
   select(`Electoral district`)
 ```
+
+--
+
 
 ```
 ## # A tibble: 338 x 1
@@ -312,14 +327,12 @@ ridings_results_2015 &lt;- ridings_results_2015 %&gt;%
 
 ridings_results_2019 &lt;- ridings_results_2019 %&gt;%
   clean_names()
+
+names(ridings_results_2019)
 ```
 
 --
 
-
-```r
-names(ridings_results_2019)
-```
 
 ```
 ## [1] "electoral_district"    "political_affiliation"
@@ -342,14 +355,12 @@ ridings_results_2015 &lt;- ridings_results_2015 %&gt;%
     into = "riding",
     sep = "/"
   )
+
+ridings_results_2015
 ```
 
 --
 
-
-```r
-ridings_results_2015
-```
 
 ```
 ## # A tibble: 338 x 2
@@ -367,7 +378,6 @@ ridings_results_2015
 ## 10 Egmont                             Morrissey, Bobby Liberal/Libéral  
 ## # … with 328 more rows
 ```
-
 
 --
 
@@ -388,6 +398,9 @@ ridings_results_2019 &lt;- ridings_results_2019 %&gt;%
 
 all(ridings_results_2015[["riding"]] == ridings_results_2019[["riding"]])
 ```
+
+--
+
 
 ```
 ## [1] FALSE
@@ -490,6 +503,9 @@ ridings_results_2015 %&gt;%
   count(french_party)
 ```
 
+--
+
+
 ```
 ## # A tibble: 5 x 2
 ##   french_party                       n
@@ -500,6 +516,8 @@ ridings_results_2015 %&gt;%
 ## 4 NPD-Nouveau Parti démocratique    44
 ## 5 Parti Vert                         1
 ```
+
+--
 
 Not as easy in English - party names are not just the word before the slash.
 
@@ -524,6 +542,9 @@ ridings_results_2015 &lt;- ridings_results_2015 %&gt;%
 head(ridings_results_2015)
 ```
 
+--
+
+
 ```
 ## # A tibble: 6 x 2
 ##   riding                           party       
@@ -547,6 +568,9 @@ Check that all values have been recoded
 ridings_results_2015 %&gt;%
   count(party)
 ```
+
+--
+
 
 ```
 ## # A tibble: 5 x 2
@@ -578,24 +602,22 @@ riding_results &lt;- ridings_results_2015 %&gt;%
     suffix = c("_2015", "_2019")
   )
 
-riding_results
+head(riding_results)
 ```
 
+--
+
+
 ```
-## # A tibble: 338 x 3
-##    riding                           party_2015   party_2019    
-##    &lt;chr&gt;                            &lt;chr&gt;        &lt;chr&gt;         
-##  1 Abbotsford                       Conservative Conservative  
-##  2 Abitibi-Baie-James-Nunavik-Eeyou NDP          Bloc Québécois
-##  3 Abitibi-Témiscamingue            NDP          Bloc Québécois
-##  4 Acadie-Bathurst                  Liberal      Liberal       
-##  5 Ahuntsic-Cartierville            Liberal      Liberal       
-##  6 Ajax                             Liberal      Liberal       
-##  7 Alfred-Pellan                    Liberal      Liberal       
-##  8 Algoma-Manitoulin-Kapuskasing    NDP          NDP           
-##  9 Argenteuil-La Petite-Nation      Liberal      Liberal       
-## 10 Aurora-Oak Ridges-Richmond Hill  Liberal      Conservative  
-## # … with 328 more rows
+## # A tibble: 6 x 3
+##   riding                           party_2015   party_2019    
+##   &lt;chr&gt;                            &lt;chr&gt;        &lt;chr&gt;         
+## 1 Abbotsford                       Conservative Conservative  
+## 2 Abitibi-Baie-James-Nunavik-Eeyou NDP          Bloc Québécois
+## 3 Abitibi-Témiscamingue            NDP          Bloc Québécois
+## 4 Acadie-Bathurst                  Liberal      Liberal       
+## 5 Ahuntsic-Cartierville            Liberal      Liberal       
+## 6 Ajax                             Liberal      Liberal
 ```
 
 --
@@ -609,6 +631,8 @@ riding_results
 ### Expectations
 
 &lt;img src="img/data.svg" width="50%" /&gt;
+
+--
 
 ### Reality
 
@@ -660,6 +684,9 @@ different_parties &lt;- riding_results %&gt;%
 different_parties
 ```
 
+--
+
+
 ```
 ## # A tibble: 62 x 3
 ##    riding                                        party_2015   party_2019   
@@ -691,6 +718,9 @@ different_parties &lt;- different_parties %&gt;%
 different_parties["party_change"]
 ```
 
+--
+
+
 ```
 ## # A tibble: 62 x 1
 ##    party_change                  
@@ -719,6 +749,9 @@ different_parties %&gt;%
   arrange(-percent) %&gt;%
   adorn_pct_formatting()
 ```
+
+--
+
 
 ```
 ##                      party_change  n percent
