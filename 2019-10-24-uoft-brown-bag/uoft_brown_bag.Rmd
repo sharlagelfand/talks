@@ -222,7 +222,7 @@ ridings_results_2019 %>%
 
 ## Make the data easier to work with
 
-The [`janitor` package]() is totally `r emo::ji("bomb")` for cleaning data.
+The [`janitor` package](https://github.com/sfirke/janitor) is totally `r emo::ji("bomb")` for cleaning data.
 
 ```{r clean-names, eval = FALSE}
 library(janitor)
@@ -560,4 +560,4 @@ class: middle, center
 
 #### I tweet: @sharlagelfand
 
-#### Slides:
+#### Slides: [sharla.party/talks/uoft-brown-bag.html](https://sharla.party/talks/uoft-brown-bag.html)
