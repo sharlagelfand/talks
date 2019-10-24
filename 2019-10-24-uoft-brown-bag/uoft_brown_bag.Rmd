@@ -29,7 +29,7 @@ class: middle, center
 
 ### 1. What do I want my data to look like when I go to use it?
 ### 2. What does it look like now?
-### 3. How do I get there, and how do I know what I'm doing is right?
+### 3. How do I get there?
 ### 4. How can I be as lazy as possible?
 
 ---
@@ -249,14 +249,17 @@ names(ridings_results_2019)
 
 ## Get the English riding name out of the 2015 data
 
+English riding name is everything before the first "/" (if there is one)
+
+--
+
 ```{r english-riding-name, eval = FALSE}
 library(tidyr)
 
 ridings_results_2015 <- ridings_results_2015 %>%
   separate(electoral_district_name_nom_de_circonscription,
     into = "riding",
-    sep = "/"
-  )
+    sep = "/")
 
 ridings_results_2015
 ```
@@ -310,6 +313,8 @@ ridings_results_2015 %>%
 
 Replace all "--" with "-"
 
+--
+
 ```{r}
 library(stringr)
 
@@ -320,7 +325,11 @@ ridings_results_2015 <- ridings_results_2015 %>%
 ridings_results_2019 <- ridings_results_2019 %>%
   mutate(riding = str_replace_all(riding, "--", "-")) %>%
   arrange(riding)
+```
 
+--
+
+```{r}
 all(ridings_results_2015[["riding"]] == ridings_results_2019[["riding"]])
 ```
 
@@ -385,22 +394,6 @@ head(ridings_results_2015)
 --
 
 ```{r, ref.label = "recode-riding", echo = FALSE}
-```
-
----
-
-## Get the elected party out of the elected official
-
-Check that all values have been recoded
-
-```{r check-recode, eval = FALSE}
-ridings_results_2015 %>%
-  count(party)
-```
-
---
-
-```{r, ref.label = "check-recode", echo = FALSE}
 ```
 
 --
@@ -511,8 +504,8 @@ different_parties["party_change"]
 ```{r party-change-tabyl, eval = FALSE}
 different_parties %>%
   tabyl(party_change) %>%
-  arrange(-percent) %>%
-  adorn_pct_formatting()
+  adorn_pct_formatting() %>%
+  arrange(-n)
 ```
 
 --
@@ -527,7 +520,7 @@ class: middle, center
 
 ### `r emo::ji("white_check_mark")` What do I want my data to look like when I go to use it?
 ### `r emo::ji("white_check_mark")` What does it look like now?
-### `r emo::ji("white_check_mark")` How do I get there, and how do I know what I'm doing is right?
+### `r emo::ji("white_check_mark")` How do I get there?
 ### `r emo::ji("x")` How can I be as lazy as possible?
 
 ---

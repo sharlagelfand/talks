@@ -31,7 +31,7 @@ class: middle, center
 
 ### 1. What do I want my data to look like when I go to use it?
 ### 2. What does it look like now?
-### 3. How do I get there, and how do I know what I'm doing is right?
+### 3. How do I get there?
 ### 4. How can I be as lazy as possible?
 
 ---
@@ -346,6 +346,10 @@ names(ridings_results_2019)
 
 ## Get the English riding name out of the 2015 data
 
+English riding name is everything before the first "/" (if there is one)
+
+--
+
 
 ```r
 library(tidyr)
@@ -353,8 +357,7 @@ library(tidyr)
 ridings_results_2015 &lt;- ridings_results_2015 %&gt;%
   separate(electoral_district_name_nom_de_circonscription,
     into = "riding",
-    sep = "/"
-  )
+    sep = "/")
 
 ridings_results_2015
 ```
@@ -436,6 +439,8 @@ ridings_results_2015 %&gt;%
 
 Replace all "--" with "-"
 
+--
+
 
 ```r
 library(stringr)
@@ -447,7 +452,12 @@ ridings_results_2015 &lt;- ridings_results_2015 %&gt;%
 ridings_results_2019 &lt;- ridings_results_2019 %&gt;%
   mutate(riding = str_replace_all(riding, "--", "-")) %&gt;%
   arrange(riding)
+```
 
+--
+
+
+```r
 all(ridings_results_2015[["riding"]] == ridings_results_2019[["riding"]])
 ```
 
@@ -555,32 +565,6 @@ head(ridings_results_2015)
 ## 4 Acadie-Bathurst                  Liberal     
 ## 5 Ahuntsic-Cartierville            Liberal     
 ## 6 Ajax                             Liberal
-```
-
----
-
-## Get the elected party out of the elected official
-
-Check that all values have been recoded
-
-
-```r
-ridings_results_2015 %&gt;%
-  count(party)
-```
-
---
-
-
-```
-## # A tibble: 5 x 2
-##   party              n
-##   &lt;chr&gt;          &lt;int&gt;
-## 1 Bloc Québécois    10
-## 2 Conservative      99
-## 3 Green Party        1
-## 4 Liberal          184
-## 5 NDP               44
 ```
 
 --
@@ -746,8 +730,8 @@ different_parties["party_change"]
 ```r
 different_parties %&gt;%
   tabyl(party_change) %&gt;%
-  arrange(-percent) %&gt;%
-  adorn_pct_formatting()
+  adorn_pct_formatting() %&gt;%
+  arrange(-n)
 ```
 
 --
@@ -775,7 +759,7 @@ class: middle, center
 
 ### ✅ What do I want my data to look like when I go to use it?
 ### ✅ What does it look like now?
-### ✅ How do I get there, and how do I know what I'm doing is right?
+### ✅ How do I get there?
 ### ❌ How can I be as lazy as possible?
 
 ---
