@@ -1,0 +1,341 @@
+The Report of Candidates Who Received the Most Votes on Election Night was downloaded on October 23, 2019 at 15:11 ET.
+Province/territory	Electoral district	Candidate who received the most votes	Political affiliation	Number of votes cast	Candidate who received the second-most votes	Political affiliation	Number of votes cast	Total number of valid votes cast in the electoral district	Variance between first and second place (number of votes)	Variance (percentage)	Status of results (preliminary or validated)	Judicial recount requested or automatic	
+Newfoundland and Labrador	Avalon	Kenneth McDonald	Liberal	18,646	Matthew Chapman	Conservative	12,538	40,457	6,108	15.1 %	Preliminary results	No	
+Newfoundland and Labrador	Bonavista--Burin--Trinity	Churence Rogers	Liberal	14,701	Sharon Vokey	Conservative	12,697	32,173	2,004	6.23 %	Preliminary results	No	
+Newfoundland and Labrador	Coast of Bays--Central--Notre Dame	Scott Simms	Liberal	15,861	Alex Bracci	Conservative	11,695	32,924	4,166	12.65 %	Preliminary results	No	
+Newfoundland and Labrador	Labrador	Yvonne Jones	Liberal	4,821	Larry Flemming	Conservative	3,548	11,389	1,273	11.18 %	Preliminary results	No	
+Newfoundland and Labrador	Long Range Mountains	Gudie Hutchings	Liberal	18,182	Josh Eisses	Conservative	10,874	38,385	7,308	19.04 %	Preliminary results	No	
+Newfoundland and Labrador	St. John's East	Jack Harris	NDP-New Democratic Party	21,164	Nick Whalen	Liberal	14,961	45,130	6,203	13.74 %	Preliminary results	No	
+Newfoundland and Labrador	St. John's South--Mount Pearl	Seamus O'Regan	Liberal	20,094	Anne Marie Anonsen	NDP-New Democratic Party	10,703	39,514	9,391	23.77 %	Preliminary results	No	
+Prince Edward Island	Cardigan	Lawrence MacAulay	Liberal	10,687	Wayne Phelan	Conservative	6,303	21,697	4,384	20.21 %	Preliminary results	No	
+Prince Edward Island	Charlottetown	Sean Casey	Liberal	8,509	Darcie Lanthier	Green Party	4,458	19,252	4,051	21.04 %	Preliminary results	No	
+Prince Edward Island	Egmont	Bobby Morrissey	Liberal	7,513	Logan McLellan	Conservative	6,616	19,058	897	4.71 %	Preliminary results	No	
+Prince Edward Island	Malpeque	Wayne Easter	Liberal	9,533	Anna Keenan	Green Party	6,103	23,030	3,430	14.89 %	Preliminary results	No	
+Nova Scotia	Cape Breton--Canso	Mike Kelloway	Liberal	16,097	Alfie MacLeod	Conservative	14,478	41,857	1,619	3.87 %	Preliminary results	No	
+Nova Scotia	Central Nova	Sean Fraser	Liberal	20,718	George Canyon	Conservative	13,201	44,559	7,517	16.87 %	Preliminary results	No	
+Nova Scotia	Cumberland--Colchester	Lenore Zann	Liberal	16,672	Scott Armstrong	Conservative	16,219	45,450	453	1.0 %	Preliminary results	No	
+Nova Scotia	Dartmouth--Cole Harbour	Darren Fisher	Liberal	23,751	Emma Norton	NDP-New Democratic Party	14,220	52,585	9,531	18.12 %	Preliminary results	No	
+Nova Scotia	Halifax	Andy Fillmore	Liberal	23,088	Christine Saulnier	NDP-New Democratic Party	16,594	54,489	6,494	11.92 %	Preliminary results	No	
+Nova Scotia	Halifax West	Geoff Regan	Liberal	26,884	Fred Shuman	Conservative	10,488	54,356	16,396	30.16 %	Preliminary results	No	
+Nova Scotia	Kings--Hants	Kody Blois	Liberal	20,807	Martha MacQuarrie	Conservative	11,905	48,035	8,902	18.53 %	Preliminary results	No	
+Nova Scotia	Sackville--Preston--Chezzetcook	Darrell Samson	Liberal	19,925	Matt Stickland	NDP-New Democratic Party	11,860	49,537	8,065	16.28 %	Validated results	No	
+Nova Scotia	South Shore--St. Margarets	Bernadette Jordan	Liberal	21,887	Rick Perkins	Conservative	14,744	52,521	7,143	13.6 %	Preliminary results	No	
+Nova Scotia	Sydney--Victoria	Jaime Battiste	Liberal	12,536	Eddie Orrell	Conservative	11,228	40,576	1,308	3.22 %	Preliminary results	No	
+Nova Scotia	West Nova	Chris d'Entremont	Conservative	18,390	Jason Deveau	Liberal	17,034	46,846	1,356	2.89 %	Preliminary results	No	
+New Brunswick	Acadie--Bathurst	Serge Cormier	Liberal	26,519	Martine Savoie	Conservative	10,344	48,097	16,175	33.63 %	Preliminary results	No	
+New Brunswick	Beauséjour	Dominic LeBlanc	Liberal	24,957	Laura Reinsborough	Green Party	14,251	53,630	10,706	19.96 %	Preliminary results	No	
+New Brunswick	Fredericton	Jenica Atwin	Green Party	15,380	Andrea Johnson	Conservative	14,589	46,841	791	1.69 %	Preliminary results	No	
+New Brunswick	Fundy Royal	Rob Moore	Conservative	21,727	Alaina Lockhart	Liberal	12,015	47,192	9,712	20.58 %	Preliminary results	No	
+New Brunswick	Madawaska--Restigouche	René Arseneault	Liberal	17,331	Nelson Fox	Conservative	9,800	34,535	7,531	21.81 %	Preliminary results	No	
+New Brunswick	Miramichi--Grand Lake	Pat Finnigan	Liberal	12,725	Peggy McLean	Conservative	12,311	34,597	414	1.2 %	Preliminary results	No	
+New Brunswick	Moncton--Riverview--Dieppe	Ginette Petitpas Taylor	Liberal	22,261	Sylvie Godin-Charest	Conservative	12,190	51,943	10,071	19.39 %	Preliminary results	No	
+New Brunswick	New Brunswick Southwest	John Williamson	Conservative	19,457	Karen Ludwig	Liberal	10,110	39,648	9,347	23.57 %	Preliminary results	No	
+New Brunswick	Saint John--Rothesay	Wayne Long	Liberal	15,448	Rodney Weston	Conservative	14,006	41,254	1,442	3.5 %	Preliminary results	No	
+New Brunswick	Tobique--Mactaquac	Richard Bragdon	Conservative	19,229	Kelsey MacDonald	Liberal	9,631	38,146	9,598	25.16 %	Preliminary results	No	
+Quebec	Abitibi--Baie-James--Nunavik--Eeyou	Sylvie Bérubé	Bloc Québécois	10,904	Isabelle Bergeron	Liberal	8,125	28,925	2,779	9.61 %	Preliminary results	No	
+Quebec	Abitibi--Témiscamingue	Sébastien Lemire	Bloc Québécois	22,591	Claude Thibault	Liberal	12,209	49,753	10,382	20.87 %	Preliminary results	No	
+Quebec	Ahuntsic-Cartierville	Mélanie Joly	Liberal	28,560	André Parizeau	Bloc Québécois	11,635	54,152	16,925	31.25 %	Preliminary results	No	
+Quebec	Alfred-Pellan	Angelo Iacono	Liberal	25,810	Michel Lachance	Bloc Québécois	15,459	53,954	10,351	19.18 %	Preliminary results	No	
+Quebec	Argenteuil--La Petite-Nation	Stéphane Lauzon	Liberal	18,759	Yves Destroismaisons	Bloc Québécois	18,087	49,623	672	1.35 %	Preliminary results	No	
+Quebec	Avignon--La Mitis--Matane--Matapédia	Kristina Michaud	Bloc Québécois	18,265	Rémi Massé	Liberal	11,983	35,374	6,282	17.76 %	Preliminary results	No	
+Quebec	Beauce	Richard Lehoux	Conservative	22,817	Maxime Bernier	People's Party	16,772	59,125	6,045	10.22 %	Preliminary results	No	
+Quebec	Beauport--Limoilou	Julie Vignola	Bloc Québécois	15,067	Alupa Clarke	Conservative	12,883	49,532	2,184	4.41 %	Preliminary results	No	
+Quebec	Beauport-Côte-de-Beaupré-Île d'Orléans-Charlevoix	Caroline Desbiens	Bloc Québécois	18,325	Sylvie Boucher	Conservative	14,947	50,285	3,378	6.72 %	Preliminary results	No	
+Quebec	Bellechasse--Les Etchemins--Lévis	Steven Blaney	Conservative	32,192	Sébastien Bouchard-Théberge	Bloc Québécois	14,665	64,062	17,527	27.36 %	Preliminary results	No	
+Quebec	Beloeil--Chambly	Yves-François Blanchet	Bloc Québécois	34,902	Marie-Chantal Hamel	Liberal	15,904	68,919	18,998	27.57 %	Preliminary results	No	
+Quebec	Berthier--Maskinongé	Yves Perron	Bloc Québécois	21,007	Ruth Ellen Brosseau	NDP-New Democratic Party	19,500	56,148	1,507	2.68 %	Preliminary results	No	
+Quebec	Bourassa	Emmanuel Dubourg	Liberal	22,980	Anne-Marie Lavoie	Bloc Québécois	8,987	39,902	13,993	35.07 %	Preliminary results	No	
+Quebec	Brome--Missisquoi	Lyne Bessette	Liberal	23,410	Monique Allard	Bloc Québécois	21,044	61,098	2,366	3.87 %	Preliminary results	No	
+Quebec	Brossard--Saint-Lambert	Alexandra Mendès	Liberal	30,208	Marie-Claude Diotte	Bloc Québécois	11,052	55,981	19,156	34.22 %	Preliminary results	No	
+Quebec	Bécancour--Nicolet--Saurel	Louis Plamondon	Bloc Québécois	29,543	Nathalie Rochefort	Liberal	9,274	52,053	20,269	38.94 %	Preliminary results	No	
+Quebec	Charlesbourg--Haute-Saint-Charles	Pierre Paul-Hus	Conservative	22,282	Alain D'Eer	Bloc Québécois	15,976	58,544	6,306	10.77 %	Preliminary results	No	
+Quebec	Chicoutimi--Le Fjord	Richard Martel	Conservative	15,862	Valérie Tremblay	Bloc Québécois	15,248	43,268	614	1.42 %	Preliminary results	No	
+Quebec	Châteauguay--Lacolle	Brenda Shanahan	Liberal	20,397	Claudia Valdivia	Bloc Québécois	19,463	52,749	934	1.77 %	Preliminary results	No	
+Quebec	Compton--Stanstead	Marie-Claude Bibeau	Liberal	21,550	David Benoît	Bloc Québécois	18,507	57,796	3,043	5.27 %	Preliminary results	No	
+Quebec	Dorval--Lachine--LaSalle	Anju Dhillon	Liberal	27,477	Jean-Frédéric Vaudry	Bloc Québécois	8,790	51,785	18,687	36.09 %	Preliminary results	No	
+Quebec	Drummond	Martin Champoux	Bloc Québécois	24,237	William Morales	Liberal	9,495	54,315	14,742	27.14 %	Preliminary results	No	
+Quebec	Gaspésie--Les Îles-de-la-Madeleine	Diane Lebouthillier	Liberal	16,296	Guy Bernatchez	Bloc Québécois	15,659	38,380	637	1.66 %	Preliminary results	No	
+Quebec	Gatineau	Steven MacKinnon	Liberal	28,827	Geneviève Nadeau	Bloc Québécois	11,858	55,174	16,969	30.76 %	Preliminary results	No	
+Quebec	Hochelaga	Soraya Martinez Ferrada	Liberal	17,779	Simon Marchand	Bloc Québécois	17,460	52,162	319	0.61 %	Preliminary results	No	
+Quebec	Honoré-Mercier	Pablo Rodriguez	Liberal	29,336	Jacques Binette	Bloc Québécois	9,908	49,959	19,428	38.89 %	Preliminary results	No	
+Quebec	Hull--Aylmer	Greg Fergus	Liberal	28,466	Joanie Riopel	Bloc Québécois	7,931	52,924	20,535	38.8 %	Preliminary results	No	
+Quebec	Joliette	Gabriel Ste-Marie	Bloc Québécois	33,492	Michel Bourgeois	Liberal	12,718	57,186	20,774	36.33 %	Preliminary results	No	
+Quebec	Jonquière	Mario Simard	Bloc Québécois	17,422	Karine Trudel	NDP-New Democratic Party	11,935	48,863	5,487	11.23 %	Preliminary results	No	
+Quebec	La Pointe-de-l'Île	Mario Beaulieu	Bloc Québécois	25,832	Jonathan Plamondon	Liberal	16,703	54,899	9,129	16.63 %	Preliminary results	No	
+Quebec	La Prairie	Alain Therrien	Bloc Québécois	25,612	Jean-Claude Poissant	Liberal	22,342	61,306	3,270	5.33 %	Preliminary results	No	
+Quebec	LaSalle--Émard--Verdun	David Lametti	Liberal	22,504	Isabel Dion	Bloc Québécois	12,537	51,632	9,967	19.3 %	Preliminary results	No	
+Quebec	Lac-Saint-Jean	Alexis Brunelle-Duceppe	Bloc Québécois	23,746	Richard Hébert	Liberal	13,621	53,971	10,125	18.76 %	Preliminary results	No	
+Quebec	Lac-Saint-Louis	Francis Scarpaleggia	Liberal	33,845	Ann Francis	Conservative	8,948	58,320	24,897	42.69 %	Preliminary results	No	
+Quebec	Laurentides--Labelle	Marie-Hélène Gaudreau	Bloc Québécois	30,525	David Graham	Liberal	21,514	65,009	9,011	13.86 %	Preliminary results	No	
+Quebec	Laurier--Sainte-Marie	Steven Guilbeault	Liberal	21,551	Nimâ Machouf	NDP-New Democratic Party	12,994	51,801	8,557	16.52 %	Preliminary results	No	
+Quebec	Laval--Les Îles	Fayçal EL-Khoury	Liberal	24,927	Nacera Beddad	Bloc Québécois	10,820	52,119	14,107	27.07 %	Preliminary results	No	
+Quebec	Longueuil--Charles-LeMoyne	Sherry Romanado	Liberal	19,367	Cathy Lepage	Bloc Québécois	18,111	49,527	1,256	2.54 %	Preliminary results	No	
+Quebec	Longueuil--Saint-Hubert	Denis Trudel	Bloc Québécois	22,937	Réjean Hébert	Liberal	20,271	59,239	2,666	4.5 %	Preliminary results	No	
+Quebec	Louis-Hébert	Joël Lightbound	Liberal	24,910	Christian Hébert	Bloc Québécois	17,262	61,474	7,648	12.44 %	Preliminary results	No	
+Quebec	Louis-Saint-Laurent	Gérard Deltell	Conservative	28,735	Jeanne-Paule Desgagnés	Bloc Québécois	14,577	64,767	14,158	21.86 %	Preliminary results	No	
+Quebec	Lévis--Lotbinière	Jacques Gourde	Conservative	28,218	François-Noël Brault	Bloc Québécois	15,873	63,159	12,345	19.55 %	Preliminary results	No	
+Quebec	Manicouagan	Marilène Gill	Bloc Québécois	21,553	François Corriveau	Conservative	7,718	39,906	13,835	34.67 %	Preliminary results	No	
+Quebec	Marc-Aurèle-Fortin	Yves Robillard	Liberal	24,652	Lizabel Nitoi	Bloc Québécois	17,989	55,351	6,663	12.04 %	Preliminary results	No	
+Quebec	Mirabel	Simon Marcil	Bloc Québécois	32,045	Karl Trudel	Liberal	15,547	62,708	16,498	26.31 %	Preliminary results	No	
+Quebec	Montarville	Stéphane Bergeron	Bloc Québécois	25,249	Michel Picard	Liberal	20,877	58,629	4,372	7.46 %	Preliminary results	No	
+Quebec	Montcalm	Luc Thériault	Bloc Québécois	31,699	Isabel Sayegh	Liberal	11,113	54,529	20,586	37.75 %	Preliminary results	No	
+Quebec	Montmagny--L'Islet--Kamouraska--Rivière-du-Loup	Bernard Généreux	Conservative	20,934	Louis Gagnon	Bloc Québécois	16,121	50,000	4,813	9.63 %	Preliminary results	No	
+Quebec	Mount Royal	Anthony Housefather	Liberal	24,137	David Tordjman	Conservative	10,723	42,793	13,414	31.35 %	Preliminary results	No	
+Quebec	Mégantic--L'Érable	Luc Berthold	Conservative	23,046	Priscilla Corbeil	Bloc Québécois	11,997	46,628	11,049	23.7 %	Preliminary results	No	
+Quebec	Notre-Dame-de-Grâce--Westmount	Marc Garneau	Liberal	27,217	Franklin Gertler	NDP-New Democratic Party	7,456	48,355	19,761	40.87 %	Preliminary results	No	
+Quebec	Outremont	Rachel Bendayan	Liberal	18,419	Andrea Clarke	NDP-New Democratic Party	7,808	39,201	10,611	27.07 %	Preliminary results	No	
+Quebec	Papineau	Justin Trudeau	Liberal	24,797	Christine Paré	NDP-New Democratic Party	9,135	48,451	15,662	32.33 %	Preliminary results	No	
+Quebec	Pierre-Boucher--Les Patriotes--Verchères	Xavier Barsalou-Duval	Bloc Québécois	31,503	Simon Chalifoux	Liberal	17,165	60,912	14,338	23.54 %	Preliminary results	No	
+Quebec	Pierrefonds--Dollard	Sameer Zuberi	Liberal	30,905	Mariam Ishak	Conservative	9,682	54,699	21,223	38.8 %	Preliminary results	No	
+Quebec	Pontiac	William Amos	Liberal	29,759	Dave Blackburn	Conservative	10,298	60,915	19,461	31.95 %	Preliminary results	No	
+Quebec	Portneuf--Jacques-Cartier	Joël Godin	Conservative	27,524	Mathieu Bonsaint	Bloc Québécois	15,440	63,644	12,084	18.99 %	Preliminary results	No	
+Quebec	Québec	Jean-Yves Duclos	Liberal	18,047	Christiane Gagnon	Bloc Québécois	17,832	54,355	215	0.4 %	Preliminary results	No	
+Quebec	Repentigny	Monique Pauzé	Bloc Québécois	34,644	Josée Larose	Liberal	17,976	64,942	16,668	25.67 %	Preliminary results	No	
+Quebec	Richmond--Arthabaska	Alain Rayes	Conservative	26,576	Olivier Nolin	Bloc Québécois	16,475	58,495	10,101	17.27 %	Preliminary results	No	
+Quebec	Rimouski-Neigette--Témiscouata--Les Basques	Maxime Blanchette-Joncas	Bloc Québécois	17,221	Guy Caron	NDP-New Democratic Party	12,916	45,376	4,305	9.49 %	Preliminary results	No	
+Quebec	Rivière-des-Mille-Îles	Luc Desilets	Bloc Québécois	23,521	Linda Lapointe	Liberal	20,773	57,780	2,748	4.76 %	Preliminary results	No	
+Quebec	Rivière-du-Nord	Rhéal Fortin	Bloc Québécois	30,620	Florence Gagnon	Liberal	12,954	58,578	17,666	30.16 %	Preliminary results	No	
+Quebec	Rosemont--La Petite-Patrie	Alexandre Boulerice	NDP-New Democratic Party	24,951	Geneviève Hinse	Liberal	14,245	59,016	10,706	18.14 %	Preliminary results	No	
+Quebec	Saint-Hyacinthe--Bagot	Simon-Pierre Savard-Tremblay	Bloc Québécois	22,995	René Vincelette	Liberal	11,828	55,543	11,167	20.11 %	Preliminary results	No	
+Quebec	Saint-Jean	Christine Normandin	Bloc Québécois	27,677	Jean Rioux	Liberal	18,767	61,354	8,910	14.52 %	Preliminary results	No	
+Quebec	Saint-Laurent	Emmanuella Lambropoulos	Liberal	23,272	Richard Serour	Conservative	6,914	39,629	16,358	41.28 %	Preliminary results	No	
+Quebec	Saint-Léonard--Saint-Michel	Patricia Lattanzio	Liberal	27,553	Ilario Maiolo	Conservative	5,353	45,000	22,200	49.33 %	Preliminary results	No	
+Quebec	Saint-Maurice--Champlain	François-Philippe Champagne	Liberal	22,961	Nicole Morin	Bloc Québécois	19,856	58,029	3,105	5.35 %	Preliminary results	No	
+Quebec	Salaberry--Suroît	Claude Debellefeuille	Bloc Québécois	29,904	Marc Faubert	Liberal	18,546	62,568	11,358	18.15 %	Preliminary results	No	
+Quebec	Shefford	Andréanne Larouche	Bloc Québécois	23,438	Pierre Breton	Liberal	22,472	60,552	966	1.6 %	Preliminary results	No	
+Quebec	Sherbrooke	Élisabeth Brière	Liberal	17,551	Pierre-Luc Dusseault	NDP-New Democratic Party	16,917	59,850	634	1.06 %	Preliminary results	No	
+Quebec	Terrebonne	Michel Boudrias	Bloc Québécois	30,785	Frédéric Beauchemin	Liberal	17,637	60,579	13,148	21.7 %	Preliminary results	No	
+Quebec	Thérèse-De Blainville	Louise Chabot	Bloc Québécois	24,364	Ramez Ayoub	Liberal	21,673	59,116	2,691	4.55 %	Preliminary results	No	
+Quebec	Trois-Rivières	Louise Charbonneau	Bloc Québécois	17,178	Valérie Renaud-Martin	Liberal	15,676	60,208	1,502	2.49 %	Preliminary results	No	
+Quebec	Vaudreuil--Soulanges	Peter Schiefke	Liberal	31,971	Noémie Rouillard	Bloc Québécois	16,550	67,564	15,421	22.82 %	Preliminary results	No	
+Quebec	Ville-Marie--Le Sud-Ouest--Île-des-Soeurs	Marc Miller	Liberal	27,107	Sophie Thiébaut	NDP-New Democratic Party	7,912	51,054	19,195	37.6 %	Preliminary results	No	
+Quebec	Vimy	Annie Koutrakis	Liberal	26,181	Claire-Emmanuelle Beaulieu	Bloc Québécois	15,402	55,115	10,779	19.56 %	Preliminary results	No	
+Ontario	Ajax	Mark Holland	Liberal	34,344	Tom Dingwall	Conservative	16,219	60,377	18,125	30.02 %	Preliminary results	No	
+Ontario	Algoma--Manitoulin--Kapuskasing	Carol Hughes	NDP-New Democratic Party	16,740	Dave Williamson	Conservative	10,557	40,209	6,183	15.38 %	Preliminary results	No	
+Ontario	Aurora--Oak Ridges--Richmond Hill	Leona Alleslev	Conservative	23,333	Leah Taylor Roy	Liberal	22,014	52,162	1,319	2.53 %	Preliminary results	No	
+Ontario	Barrie--Innisfil	John Brassard	Conservative	23,573	Lisa-Marie Wilson	Liberal	15,655	53,600	7,918	14.77 %	Preliminary results	No	
+Ontario	Barrie--Springwater--Oro-Medonte	Doug Shipley	Conservative	20,857	Brian Kalliecharan	Liberal	16,601	53,254	4,256	7.99 %	Preliminary results	No	
+Ontario	Bay of Quinte	Neil Ellis	Liberal	24,351	Tim Durkin	Conservative	22,886	61,953	1,465	2.36 %	Preliminary results	No	
+Ontario	Beaches--East York	Nathaniel Erskine-Smith	Liberal	32,168	Mae J. Nam	NDP-New Democratic Party	11,964	56,206	20,204	35.95 %	Preliminary results	No	
+Ontario	Brampton Centre	Ramesh Sangha	Liberal	18,543	Pawanjit Gosal	Conservative	10,605	39,278	7,938	20.21 %	Preliminary results	No	
+Ontario	Brampton East	Maninder Sidhu	Liberal	23,727	Saranjit Singh	NDP-New Democratic Party	13,077	50,078	10,650	21.27 %	Preliminary results	No	
+Ontario	Brampton North	Ruby Sahota	Liberal	25,697	Arpan Khanna	Conservative	13,895	49,958	11,802	23.62 %	Preliminary results	No	
+Ontario	Brampton South	Sonia Sidhu	Liberal	23,836	Ramandeep Brar	Conservative	13,753	48,171	10,083	20.93 %	Preliminary results	No	
+Ontario	Brampton West	Kamal Khera	Liberal	28,433	Murarilal Thapliyal	Conservative	12,659	53,007	15,774	29.76 %	Preliminary results	No	
+Ontario	Brantford--Brant	Phil McColeman	Conservative	26,723	Danielle Takacs	Liberal	20,250	66,068	6,473	9.8 %	Preliminary results	No	
+Ontario	Bruce--Grey--Owen Sound	Alex Ruff	Conservative	26,584	Michael Den Tandt	Liberal	17,247	57,522	9,337	16.23 %	Preliminary results	No	
+Ontario	Burlington	Karina Gould	Liberal	34,217	Jane Michael	Conservative	23,467	70,888	10,750	15.16 %	Preliminary results	No	
+Ontario	Cambridge	Bryan May	Liberal	22,636	Sunny Attwal	Conservative	17,316	57,295	5,320	9.29 %	Preliminary results	No	
+Ontario	Carleton	Pierre Poilievre	Conservative	31,637	Chris Rodgers	Liberal	25,934	67,935	5,703	8.39 %	Preliminary results	No	
+Ontario	Chatham-Kent--Leamington	Dave Epp	Conservative	25,289	Katie Omstead	Liberal	16,751	53,728	8,538	15.89 %	Preliminary results	No	
+Ontario	Davenport	Julie Dzerowicz	Liberal	22,813	Andrew Cash	NDP-New Democratic Party	21,341	52,303	1,472	2.81 %	Preliminary results	No	
+Ontario	Don Valley East	Yasmin Ratansi	Liberal	24,908	Michael Ma	Conservative	10,036	41,734	14,872	35.64 %	Preliminary results	No	
+Ontario	Don Valley North	Han Dong	Liberal	22,998	Sarah Fischer	Conservative	16,307	45,704	6,691	14.64 %	Preliminary results	No	
+Ontario	Don Valley West	Rob Oliphant	Liberal	28,426	Yvonne Robertson	Conservative	15,981	51,017	12,445	24.39 %	Preliminary results	No	
+Ontario	Dufferin--Caledon	Kyle Seeback	Conservative	28,729	Michele Fisher	Liberal	22,330	67,956	6,399	9.42 %	Preliminary results	No	
+Ontario	Durham	Erin O'Toole	Conservative	30,627	Jonathan Giancroce	Liberal	23,299	72,423	7,328	10.12 %	Preliminary results	No	
+Ontario	Eglinton--Lawrence	Marco Mendicino	Liberal	29,384	Chani Aryeh-Bain	Conservative	17,909	55,109	11,475	20.82 %	Preliminary results	No	
+Ontario	Elgin--Middlesex--London	Karen Vecchio	Conservative	30,880	Pam Armstrong	Liberal	14,166	61,288	16,714	27.27 %	Preliminary results	No	
+Ontario	Essex	Chris Lewis	Conservative	28,126	Tracey Ramsey	NDP-New Democratic Party	23,350	67,686	4,776	7.06 %	Preliminary results	No	
+Ontario	Etobicoke Centre	Yvan Baker	Liberal	32,347	Ted Opitz	Conservative	21,610	62,390	10,737	17.21 %	Preliminary results	No	
+Ontario	Etobicoke North	Kirsty Duncan	Liberal	26,147	Sarabjit Kaur	Conservative	9,415	42,685	16,732	39.2 %	Preliminary results	No	
+Ontario	Etobicoke--Lakeshore	James Maloney	Liberal	35,522	Barry O'Brien	Conservative	19,811	68,588	15,711	22.91 %	Preliminary results	No	
+Ontario	Flamborough--Glanbrook	David Sweet	Conservative	24,352	Jennifer Stebbing	Liberal	23,702	62,937	650	1.03 %	Preliminary results	No	
+Ontario	Glengarry--Prescott--Russell	Francis Drouin	Liberal	29,991	Pierre Lemieux	Conservative	22,849	63,297	7,142	11.28 %	Preliminary results	No	
+Ontario	Guelph	Lloyd Longfield	Liberal	29,890	Steve Dyck	Green Party	18,808	74,059	11,082	14.96 %	Preliminary results	No	
+Ontario	Haldimand--Norfolk	Diane Finley	Conservative	27,298	Kim Huffman	Liberal	14,285	58,372	13,013	22.29 %	Preliminary results	No	
+Ontario	Haliburton--Kawartha Lakes--Brock	Jamie Schmale	Conservative	31,986	Judi Forbes	Liberal	16,839	65,015	15,147	23.3 %	Preliminary results	No	
+Ontario	Hamilton Centre	Matthew Green	NDP-New Democratic Party	20,080	Jasper Kujavsky	Liberal	12,474	43,528	7,606	17.47 %	Preliminary results	No	
+Ontario	Hamilton East--Stoney Creek	Bob Bratina	Liberal	19,899	Nick Milanovic	NDP-New Democratic Party	14,814	51,639	5,085	9.85 %	Preliminary results	No	
+Ontario	Hamilton Mountain	Scott Duvall	NDP-New Democratic Party	18,872	Bruno Uggenti	Liberal	15,825	52,273	3,047	5.83 %	Preliminary results	No	
+Ontario	Hamilton West--Ancaster--Dundas	Filomena Tassi	Liberal	29,740	Bert Laranjo	Conservative	17,219	64,131	12,521	19.52 %	Preliminary results	No	
+Ontario	Hastings--Lennox and Addington	Derek Sloan	Conservative	21,225	Mike Bossio	Liberal	18,991	51,321	2,234	4.35 %	Preliminary results	No	
+Ontario	Humber River--Black Creek	Judy Sgro	Liberal	22,983	Maria Augimeri	NDP-New Democratic Party	7,126	37,636	15,857	42.13 %	Preliminary results	No	
+Ontario	Huron--Bruce	Ben Lobb	Conservative	29,351	Allan Thompson	Liberal	19,909	60,330	9,442	15.65 %	Preliminary results	No	
+Ontario	Kanata--Carleton	Karen McCrimmon	Liberal	27,802	Justina McCaffrey	Conservative	23,699	64,613	4,103	6.35 %	Preliminary results	No	
+Ontario	Kenora	Eric Melillo	Conservative	9,313	Bob Nault	Liberal	8,188	27,304	1,125	4.12 %	Preliminary results	No	
+Ontario	King--Vaughan	Deb Schulte	Liberal	28,365	Anna Roberts	Conservative	27,454	63,199	911	1.44 %	Preliminary results	No	
+Ontario	Kingston and the Islands	Mark Gerretsen	Liberal	30,688	Barrington Walker	NDP-New Democratic Party	15,592	66,672	15,096	22.64 %	Preliminary results	No	
+Ontario	Kitchener Centre	Raj Saini	Liberal	20,014	Mike Morrice	Green Party	14,215	54,659	5,799	10.61 %	Preliminary results	No	
+Ontario	Kitchener South--Hespeler	Marwan Tabbara	Liberal	20,732	Alan Keeso	Conservative	17,359	51,694	3,373	6.52 %	Preliminary results	No	
+Ontario	Kitchener--Conestoga	Tim Louis	Liberal	20,106	Harold Albrecht	Conservative	19,833	50,763	273	0.54 %	Preliminary results	No	
+Ontario	Lambton--Kent--Middlesex	Lianne Rood	Conservative	28,489	Jesse McCormick	Liberal	14,638	57,864	13,851	23.94 %	Preliminary results	No	
+Ontario	Lanark--Frontenac--Kingston	Scott Reid	Conservative	29,405	Kayley Kennedy	Liberal	14,926	60,868	14,479	23.79 %	Preliminary results	No	
+Ontario	Leeds-Grenville-Thousand Islands and Rideau Lakes	Michael Barrett	Conservative	28,435	Josh Bennett	Liberal	15,266	57,799	13,169	22.78 %	Preliminary results	No	
+Ontario	London North Centre	Peter Fragiskatos	Liberal	25,496	Sarah Bokhari	Conservative	14,291	59,777	11,205	18.74 %	Preliminary results	No	
+Ontario	London West	Kate Young	Liberal	30,054	Liz Snelgrove	Conservative	19,718	70,234	10,336	14.72 %	Preliminary results	No	
+Ontario	London--Fanshawe	Lindsay Mathyssen	NDP-New Democratic Party	22,450	Mohamed Hammoud	Liberal	14,679	54,933	7,771	14.15 %	Preliminary results	No	
+Ontario	Markham--Stouffville	Helena Jaczek	Liberal	24,743	Theodore Antony	Conservative	19,570	63,654	5,173	8.13 %	Preliminary results	No	
+Ontario	Markham--Thornhill	Mary Ng	Liberal	23,826	Alex Yuan	Conservative	15,401	44,330	8,425	19.01 %	Preliminary results	No	
+Ontario	Markham--Unionville	Bob Saroya	Conservative	25,871	Alan Ho	Liberal	20,019	52,464	5,852	11.15 %	Preliminary results	No	
+Ontario	Milton	Adam van Koeverden	Liberal	30,467	Lisa Raitt	Conservative	21,454	59,005	9,013	15.27 %	Preliminary results	No	
+Ontario	Mississauga Centre	Omar Alghabra	Liberal	29,472	Milad Mikael	Conservative	15,758	52,948	13,714	25.9 %	Preliminary results	No	
+Ontario	Mississauga East--Cooksville	Peter Fonseca	Liberal	27,058	Wladyslaw Lizon	Conservative	17,237	51,079	9,821	19.23 %	Preliminary results	No	
+Ontario	Mississauga--Erin Mills	Iqra Khalid	Liberal	30,894	Hani Tawfilis	Conservative	19,105	57,954	11,789	20.34 %	Preliminary results	No	
+Ontario	Mississauga--Lakeshore	Sven Spengemann	Liberal	28,994	Stella Ambler	Conservative	22,573	60,129	6,421	10.68 %	Preliminary results	No	
+Ontario	Mississauga--Malton	Navdeep Bains	Liberal	27,501	Tom Varughese	Conservative	12,448	47,893	15,053	31.43 %	Preliminary results	No	
+Ontario	Mississauga--Streetsville	Gagan Sikand	Liberal	29,058	Ghada Melek	Conservative	19,227	57,899	9,831	16.98 %	Preliminary results	No	
+Ontario	Nepean	Chandra Arya	Liberal	31,098	Brian St. Louis	Conservative	22,849	68,191	8,249	12.1 %	Preliminary results	No	
+Ontario	Newmarket--Aurora	Tony Van Bynen	Liberal	25,957	Lois Brown	Conservative	23,079	60,468	2,878	4.76 %	Preliminary results	No	
+Ontario	Niagara Centre	Vance Badawey	Liberal	20,109	April Jeffs	Conservative	17,895	57,510	2,214	3.85 %	Preliminary results	No	
+Ontario	Niagara Falls	Tony Baldinelli	Conservative	24,266	Andrea Kaiser	Liberal	22,079	68,111	2,187	3.21 %	Preliminary results	No	
+Ontario	Niagara West	Dean Allison	Conservative	23,973	Ian Bingham	Liberal	16,986	52,682	6,987	13.26 %	Preliminary results	No	
+Ontario	Nickel Belt	Marc G Serré	Liberal	18,918	Stef Paquette	NDP-New Democratic Party	15,564	48,524	3,354	6.91 %	Preliminary results	No	
+Ontario	Nipissing--Timiskaming	Anthony Rota	Liberal	18,101	Jordy Carr	Conservative	12,332	45,173	5,769	12.77 %	Preliminary results	No	
+Ontario	Northumberland--Peterborough South	Philip Lawrence	Conservative	27,218	Kim Rudd	Liberal	24,706	68,268	2,512	3.68 %	Preliminary results	No	
+Ontario	Oakville	Anita Anand	Liberal	28,668	Terence Young	Conservative	24,046	61,882	4,622	7.47 %	Preliminary results	No	
+Ontario	Oakville North--Burlington	Pam Damoff	Liberal	32,952	Sean Weir	Conservative	26,229	68,452	6,723	9.82 %	Preliminary results	No	
+Ontario	Orléans	Marie-France Lalonde	Liberal	43,533	David Bertschi	Conservative	22,697	80,198	20,836	25.98 %	Preliminary results	No	
+Ontario	Oshawa	Colin Carrie	Conservative	23,989	Shailene Panylo	NDP-New Democratic Party	17,531	61,614	6,458	10.48 %	Preliminary results	No	
+Ontario	Ottawa Centre	Catherine McKenna	Liberal	36,612	Emilie Taman	NDP-New Democratic Party	22,049	75,448	14,563	19.3 %	Preliminary results	No	
+Ontario	Ottawa South	David McGuinty	Liberal	33,433	Eli Tannis	Conservative	15,707	63,752	17,726	27.8 %	Preliminary results	No	
+Ontario	Ottawa West--Nepean	Anita Vandenbeld	Liberal	27,599	Abdul Abdi	Conservative	16,491	60,699	11,108	18.3 %	Preliminary results	No	
+Ontario	Ottawa--Vanier	Mona Fortier	Liberal	31,487	Stéphanie Mercier	NDP-New Democratic Party	13,034	62,185	18,453	29.67 %	Preliminary results	No	
+Ontario	Oxford	Dave MacKenzie	Conservative	29,209	Matthew Chambers	NDP-New Democratic Party	12,188	60,469	17,021	28.15 %	Preliminary results	No	
+Ontario	Parkdale--High Park	Arif Virani	Liberal	28,408	Paul Taylor	NDP-New Democratic Party	18,777	59,952	9,631	16.06 %	Preliminary results	No	
+Ontario	Parry Sound--Muskoka	Scott Aitchison	Conservative	22,676	Trisha Cowie	Liberal	16,418	54,080	6,258	11.57 %	Preliminary results	No	
+Ontario	Perth--Wellington	John Nater	Conservative	25,504	Pirie Mitchell	Liberal	14,827	54,921	10,677	19.44 %	Preliminary results	No	
+Ontario	Peterborough--Kawartha	Maryam Monsef	Liberal	26,979	Michael Skinner	Conservative	24,096	68,854	2,883	4.19 %	Preliminary results	No	
+Ontario	Pickering--Uxbridge	Jennifer O'Connell	Liberal	32,019	Cyma Musarat	Conservative	18,320	62,751	13,699	21.83 %	Preliminary results	No	
+Ontario	Renfrew--Nipissing--Pembroke	Cheryl Gallant	Conservative	30,287	Ruben Marini	Liberal	11,326	57,506	18,961	32.97 %	Preliminary results	No	
+Ontario	Richmond Hill	Majid Jowhari	Liberal	21,804	Costas Menegakis	Conservative	21,692	50,249	112	0.22 %	Preliminary results	No	
+Ontario	Sarnia--Lambton	Marilyn Gladu	Conservative	28,340	Adam Kilner	NDP-New Democratic Party	12,372	57,084	15,968	27.97 %	Preliminary results	No	
+Ontario	Sault Ste. Marie	Terry Sheehan	Liberal	16,084	Sonny Spina	Conservative	13,352	41,267	2,732	6.62 %	Preliminary results	No	
+Ontario	Scarborough Centre	Salma Zahid	Liberal	25,424	Irshad Chaudhry	Conservative	10,320	46,076	15,104	32.78 %	Preliminary results	No	
+Ontario	Scarborough North	Shaun Chen	Liberal	20,605	David Kong	Conservative	11,746	38,492	8,859	23.02 %	Preliminary results	No	
+Ontario	Scarborough Southwest	Bill Blair	Liberal	28,640	Kimberly Fawcett Smith	Conservative	10,421	50,106	18,219	36.36 %	Preliminary results	No	
+Ontario	Scarborough--Agincourt	Jean Yip	Liberal	20,778	Sean Hu	Conservative	15,376	41,247	5,402	13.1 %	Preliminary results	No	
+Ontario	Scarborough--Guildwood	John McKay	Liberal	25,797	Quintus Thuraisingham	Conservative	9,501	42,219	16,296	38.6 %	Preliminary results	No	
+Ontario	Scarborough--Rouge Park	Gary Anandasangaree	Liberal	31,339	Bobby Singh	Conservative	10,088	50,305	21,251	42.24 %	Preliminary results	No	
+Ontario	Simcoe North	Bruce Stanton	Conservative	27,112	Gerry Hawes	Liberal	19,140	62,302	7,972	12.8 %	Preliminary results	No	
+Ontario	Simcoe--Grey	Terry Dowdall	Conservative	32,444	Lorne Kenney	Liberal	23,372	74,226	9,072	12.22 %	Preliminary results	No	
+Ontario	Spadina--Fort York	Adam Vaughan	Liberal	33,060	Diana Yoon	NDP-New Democratic Party	12,227	59,648	20,833	34.93 %	Preliminary results	No	
+Ontario	St. Catharines	Chris Bittle	Liberal	23,817	Krystina Waler	Conservative	18,850	59,370	4,967	8.37 %	Preliminary results	No	
+Ontario	Stormont--Dundas--South Glengarry	Eric Duncan	Conservative	28,848	Heather Megill	Liberal	13,585	53,258	15,263	28.66 %	Preliminary results	No	
+Ontario	Sudbury	Paul Lefebvre	Liberal	19,484	Beth Mairs	NDP-New Democratic Party	13,766	47,708	5,718	11.99 %	Preliminary results	No	
+Ontario	Thornhill	Peter Kent	Conservative	29,082	Gary Gladstone	Liberal	18,872	53,432	10,210	19.11 %	Preliminary results	No	
+Ontario	Thunder Bay--Rainy River	Marcus Powlowski	Liberal	14,336	Linda Rydholm	Conservative	11,984	40,541	2,352	5.8 %	Preliminary results	No	
+Ontario	Thunder Bay--Superior North	Patty Hajdu	Liberal	17,982	Frank Pullia	Conservative	10,861	42,178	7,121	16.88 %	Preliminary results	No	
+Ontario	Timmins--James Bay	Charlie Angus	NDP-New Democratic Party	14,357	Kraymr Grenke	Conservative	9,784	36,068	4,573	12.68 %	Preliminary results	No	
+Ontario	Toronto Centre	Bill Morneau	Liberal	30,580	Brian Chang	NDP-New Democratic Party	11,886	53,299	18,694	35.07 %	Preliminary results	No	
+Ontario	Toronto--Danforth	Julie Dabrusin	Liberal	27,144	Min Sook Lee	NDP-New Democratic Party	18,896	56,990	8,248	14.47 %	Preliminary results	No	
+Ontario	Toronto--St. Paul's	Carolyn Bennett	Liberal	32,256	Jae Truesdell	Conservative	12,579	58,850	19,677	33.44 %	Preliminary results	No	
+Ontario	University--Rosedale	Chrystia Freeland	Liberal	28,088	Melissa Jean-Baptiste Vajda	NDP-New Democratic Party	11,996	54,604	16,092	29.47 %	Preliminary results	No	
+Ontario	Vaughan--Woodbridge	Francesco Sorbara	Liberal	25,654	Teresa Kruze	Conservative	18,215	50,010	7,439	14.88 %	Preliminary results	No	
+Ontario	Waterloo	Bardish Chagger	Liberal	30,606	Jerry Zhang	Conservative	15,479	62,791	15,127	24.09 %	Preliminary results	No	
+Ontario	Wellington--Halton Hills	Michael Chong	Conservative	32,801	Lesley Barron	Liberal	19,455	68,760	13,346	19.41 %	Preliminary results	No	
+Ontario	Whitby	Ryan Turnbull	Liberal	29,713	Todd McCarthy	Conservative	24,307	68,059	5,406	7.94 %	Preliminary results	No	
+Ontario	Willowdale	Ali Ehsassi	Liberal	21,912	Daniel Lee	Conservative	16,150	44,639	5,762	12.91 %	Preliminary results	No	
+Ontario	Windsor West	Brian Masse	NDP-New Democratic Party	20,692	Sandra Pupatello	Liberal	18,697	51,539	1,995	3.87 %	Preliminary results	No	
+Ontario	Windsor--Tecumseh	Irek Kusmierczyk	Liberal	18,896	Cheryl Hardcastle	NDP-New Democratic Party	18,254	56,512	642	1.14 %	Preliminary results	No	
+Ontario	York Centre	Michael Levitt	Liberal	21,433	Rachel Willson	Conservative	15,606	42,588	5,827	13.68 %	Preliminary results	No	
+Ontario	York South--Weston	Ahmed Hussen	Liberal	25,638	Yafet Tewelde	NDP-New Democratic Party	8,427	44,788	17,211	38.43 %	Preliminary results	No	
+Ontario	York--Simcoe	Scot Davidson	Conservative	24,796	Cynthia Wesley-Esquimaux	Liberal	14,252	53,303	10,544	19.78 %	Preliminary results	No	
+Manitoba	Brandon--Souris	Larry Maguire	Conservative	25,729	Ashley Duguay	NDP-New Democratic Party	5,694	40,536	20,035	49.43 %	Preliminary results	No	
+Manitoba	Charleswood--St. James--Assiniboia--Headingley	Marty Morantz	Conservative	18,530	Doug Eyolfson	Liberal	16,133	45,510	2,397	5.27 %	Preliminary results	No	
+Manitoba	Churchill--Keewatinook Aski	Niki Ashton	NDP-New Democratic Party	11,133	Judy Klassen	Liberal	5,125	22,311	6,008	26.93 %	Preliminary results	No	
+Manitoba	Dauphin--Swan River--Neepawa	Dan Mazier	Conservative	24,942	Laverne Lewycky	NDP-New Democratic Party	5,404	38,686	19,538	50.5 %	Preliminary results	No	
+Manitoba	Elmwood--Transcona	Daniel Blaikie	NDP-New Democratic Party	19,841	Lawrence Toet	Conservative	16,426	43,532	3,415	7.84 %	Preliminary results	No	
+Manitoba	Kildonan--St. Paul	Raquel Dancho	Conservative	19,690	MaryAnn Mihychuk	Liberal	12,187	43,768	7,503	17.14 %	Preliminary results	No	
+Manitoba	Portage--Lisgar	Candice Bergen	Conservative	31,403	Ken Werbiski	Liberal	4,721	44,227	26,682	60.33 %	Preliminary results	No	
+Manitoba	Provencher	Ted Falk	Conservative	31,588	Trevor Kirczenow	Liberal	6,254	48,023	25,334	52.75 %	Preliminary results	No	
+Manitoba	Saint Boniface--Saint Vital	Dan Vandal	Liberal	19,934	Rejeanne Caron	Conservative	15,287	46,724	4,647	9.95 %	Preliminary results	No	
+Manitoba	Selkirk--Interlake--Eastman	James Bezan	Conservative	30,779	Robert A. Smith	NDP-New Democratic Party	8,743	48,974	22,036	45.0 %	Preliminary results	No	
+Manitoba	Winnipeg Centre	Leah Gazan	NDP-New Democratic Party	12,844	Robert-Falcon Ouellette	Liberal	10,385	31,066	2,459	7.92 %	Preliminary results	No	
+Manitoba	Winnipeg North	Kevin Lamoureux	Liberal	14,867	Kyle Mason	NDP-New Democratic Party	8,221	31,528	6,646	21.08 %	Preliminary results	No	
+Manitoba	Winnipeg South	Terry Duguid	Liberal	19,887	Melanie Maher	Conservative	18,309	47,199	1,578	3.34 %	Preliminary results	No	
+Manitoba	Winnipeg South Centre	Jim Carr	Liberal	22,106	Joyce Bateman	Conservative	14,565	48,952	7,541	15.4 %	Preliminary results	No	
+Saskatchewan	Battlefords--Lloydminster	Rosemarie Falk	Conservative	27,784	Marcella Pedersen	NDP-New Democratic Party	3,947	35,189	23,837	67.74 %	Preliminary results	No	
+Saskatchewan	Carlton Trail--Eagle Creek	Kelly Block	Conservative	34,814	Jasmine Calix	NDP-New Democratic Party	5,384	44,217	29,430	66.56 %	Preliminary results	No	
+Saskatchewan	Cypress Hills--Grasslands	Jeremy Patzer	Conservative	30,898	Trevor Peterson	NDP-New Democratic Party	3,601	38,048	27,297	71.74 %	Preliminary results	No	
+Saskatchewan	Desnethé--Missinippi--Churchill River	Gary Vidal	Conservative	10,816	Georgina Jolibois	NDP-New Democratic Party	7,504	25,924	3,312	12.78 %	Preliminary results	No	
+Saskatchewan	Moose Jaw--Lake Centre--Lanigan	Tom Lukiwski	Conservative	30,801	Talon Regent	NDP-New Democratic Party	7,394	43,273	23,407	54.09 %	Preliminary results	No	
+Saskatchewan	Prince Albert	Randy Hoback	Conservative	26,671	Harmony Johnson-Harder	NDP-New Democratic Party	6,815	39,201	19,856	50.65 %	Preliminary results	No	
+Saskatchewan	Regina--Lewvan	Warren Steinley	Conservative	26,837	Jigar Patel	NDP-New Democratic Party	14,454	50,772	12,383	24.39 %	Preliminary results	No	
+Saskatchewan	Regina--Qu'Appelle	Andrew Scheer	Conservative	24,233	Ray Aldinger	NDP-New Democratic Party	7,517	38,057	16,716	43.92 %	Preliminary results	No	
+Saskatchewan	Regina--Wascana	Michael Kram	Conservative	22,186	Ralph Goodale	Liberal	14,998	44,767	7,188	16.06 %	Preliminary results	No	
+Saskatchewan	Saskatoon West	Brad Redekopp	Conservative	18,406	Sheri Benson	NDP-New Democratic Party	15,270	38,189	3,136	8.21 %	Preliminary results	No	
+Saskatchewan	Saskatoon--Grasswood	Kevin Waugh	Conservative	26,013	Erika Ritchie	NDP-New Democratic Party	12,310	48,466	13,703	28.27 %	Preliminary results	No	
+Saskatchewan	Saskatoon--University	Corey Tochor	Conservative	24,248	Claire Card	NDP-New Democratic Party	13,787	46,372	10,461	22.56 %	Preliminary results	No	
+Saskatchewan	Souris--Moose Mountain	Robert Kitchen	Conservative	33,932	Ashlee Hicks	NDP-New Democratic Party	3,096	40,180	30,836	76.74 %	Preliminary results	No	
+Saskatchewan	Yorkton--Melville	Cathay Wagantall	Conservative	28,972	Carter Antoine	NDP-New Democratic Party	4,578	37,850	24,394	64.45 %	Preliminary results	No	
+Alberta	Banff--Airdrie	Blake Richards	Conservative	54,580	Gwyneth Midgley	Liberal	8,216	76,595	46,364	60.53 %	Preliminary results	No	
+Alberta	Battle River--Crowfoot	Damien Kurek	Conservative	52,497	Natasha Fryzuk	NDP-New Democratic Party	3,089	61,404	49,408	80.46 %	Preliminary results	No	
+Alberta	Bow River	Martin Shields	Conservative	45,691	Margaret Rhemtulla	Liberal	3,104	54,357	42,587	78.35 %	Preliminary results	No	
+Alberta	Calgary Centre	Greg McLean	Conservative	36,360	Kent Hehr	Liberal	17,199	63,934	19,161	29.97 %	Preliminary results	No	
+Alberta	Calgary Confederation	Len Webber	Conservative	35,648	Jordan Stein	Liberal	14,462	64,345	21,186	32.93 %	Preliminary results	No	
+Alberta	Calgary Forest Lawn	Jasraj Singh Hallan	Conservative	23,585	Jag Anand	Liberal	8,537	39,431	15,048	38.16 %	Preliminary results	No	
+Alberta	Calgary Heritage	Bob Benzen	Conservative	39,098	Scott Forsyth	Liberal	7,671	55,202	31,427	56.93 %	Preliminary results	No	
+Alberta	Calgary Midnapore	Stephanie Kusie	Conservative	49,700	Brian Aalto	Liberal	7,320	66,717	42,380	63.52 %	Preliminary results	No	
+Alberta	Calgary Nose Hill	Michelle Rempel	Conservative	37,950	Josephine Tsang	Liberal	8,606	54,281	29,344	54.06 %	Preliminary results	No	
+Alberta	Calgary Rocky Ridge	Pat Kelly	Conservative	47,477	Todd Kathol	Liberal	12,694	69,258	34,783	50.22 %	Preliminary results	No	
+Alberta	Calgary Shepard	Tom Kmiec	Conservative	57,793	Del Arnold	Liberal	8,461	76,885	49,332	64.16 %	Preliminary results	No	
+Alberta	Calgary Signal Hill	Ron Liepert	Conservative	43,535	Ghada Alatrash	Liberal	9,370	61,870	34,165	55.22 %	Preliminary results	No	
+Alberta	Calgary Skyview	Jag Sahota	Conservative	26,193	Nirmala Naidoo	Liberal	14,134	49,874	12,059	24.18 %	Preliminary results	No	
+Alberta	Edmonton Centre	James Cumming	Conservative	21,586	Randy Boissonnault	Liberal	17,000	51,745	4,586	8.86 %	Preliminary results	No	
+Alberta	Edmonton Griesbach	Kerry Diotte	Conservative	23,551	Mark Cherrington	NDP-New Democratic Party	11,499	45,977	12,052	26.21 %	Preliminary results	No	
+Alberta	Edmonton Manning	Ziad Aboultaif	Conservative	28,837	Kamal Kadri	Liberal	10,903	51,125	17,934	35.08 %	Preliminary results	No	
+Alberta	Edmonton Mill Woods	Tim Uppal	Conservative	26,425	Amarjeet Sohi	Liberal	17,611	52,417	8,814	16.82 %	Preliminary results	No	
+Alberta	Edmonton Riverbend	Matt Jeneroux	Conservative	34,491	Tariq Chaudary	Liberal	13,591	59,661	20,900	35.03 %	Preliminary results	No	
+Alberta	Edmonton Strathcona	Heather McPherson	NDP-New Democratic Party	26,189	Sam Lilly	Conservative	20,634	55,381	5,555	10.03 %	Preliminary results	No	
+Alberta	Edmonton West	Kelly McCauley	Conservative	35,181	Kerrie Johnston	Liberal	11,555	57,589	23,626	41.03 %	Preliminary results	No	
+Alberta	Edmonton--Wetaskiwin	Mike Lake	Conservative	61,709	Richard Wong	Liberal	10,300	85,093	51,409	60.42 %	Preliminary results	No	
+Alberta	Foothills	John Barlow	Conservative	52,907	Cheryl Moller	Liberal	3,765	64,290	49,142	76.44 %	Preliminary results	No	
+Alberta	Fort McMurray--Cold Lake	David Yurdiga	Conservative	39,765	Maggie Farrington	Liberal	4,708	49,680	35,057	70.57 %	Preliminary results	No	
+Alberta	Grande Prairie--Mackenzie	Chris Warkentin	Conservative	50,458	Erin Alyward	NDP-New Democratic Party	4,064	59,936	46,394	77.41 %	Preliminary results	No	
+Alberta	Lakeland	Shannon Stubbs	Conservative	47,551	Jeffrey Swanson	NDP-New Democratic Party	3,634	56,573	43,917	77.63 %	Preliminary results	No	
+Alberta	Lethbridge	Rachael Harder	Conservative	41,580	Shandi Bleiken	NDP-New Democratic Party	9,419	63,339	32,161	50.78 %	Preliminary results	No	
+Alberta	Medicine Hat--Cardston--Warner	Glen Motz	Conservative	41,498	Elizabeth Thomson	NDP-New Democratic Party	4,530	52,334	36,968	70.64 %	Preliminary results	No	
+Alberta	Peace River--Westlock	Arnold Viersen	Conservative	41,159	Jennifer Villebrun	NDP-New Democratic Party	3,805	50,945	37,354	73.32 %	Preliminary results	No	
+Alberta	Red Deer--Lacombe	Blaine Calkins	Conservative	52,684	Lauren Pezzella	NDP-New Democratic Party	5,888	65,950	46,796	70.96 %	Preliminary results	No	
+Alberta	Red Deer--Mountain View	Earl Dreeshen	Conservative	54,111	Logan Garbanewski	NDP-New Democratic Party	4,836	67,277	49,275	73.24 %	Preliminary results	No	
+Alberta	Sherwood Park--Fort Saskatchewan	Garnett Genuis	Conservative	52,950	Aidan Theroux	NDP-New Democratic Party	8,667	71,938	44,283	61.56 %	Preliminary results	No	
+Alberta	St. Albert--Edmonton	Michael Cooper	Conservative	38,807	Greg Springate	Liberal	12,224	63,850	26,583	41.63 %	Preliminary results	No	
+Alberta	Sturgeon River--Parkland	Dane Lloyd	Conservative	52,163	Guy Desforges	NDP-New Democratic Party	6,794	67,231	45,369	67.48 %	Preliminary results	No	
+Alberta	Yellowhead	Gerald Soroka	Conservative	45,206	Kristine Bowman	NDP-New Democratic Party	3,781	54,961	41,425	75.37 %	Preliminary results	No	
+British Columbia	Abbotsford	Ed Fast	Conservative	25,028	Seamus Heffernan	Liberal	10,460	48,548	14,568	30.01 %	Preliminary results	No	
+British Columbia	Burnaby North--Seymour	Terry Beech	Liberal	17,404	Svend Robinson	NDP-New Democratic Party	15,844	48,988	1,560	3.18 %	Preliminary results	No	
+British Columbia	Burnaby South	Jagmeet Singh	NDP-New Democratic Party	16,753	Jay Shin	Conservative	13,887	44,701	2,866	6.41 %	Preliminary results	No	
+British Columbia	Cariboo--Prince George	Todd Doherty	Conservative	28,564	Tracy Calogheros	Liberal	10,788	54,126	17,776	32.84 %	Preliminary results	No	
+British Columbia	Central Okanagan--Similkameen--Nicola	Dan Albas	Conservative	30,364	Mary Ann Murphy	Liberal	15,843	63,436	14,521	22.89 %	Preliminary results	No	
+British Columbia	Chilliwack--Hope	Mark Strahl	Conservative	26,477	Kelly Velonis	Liberal	10,735	53,272	15,742	29.55 %	Preliminary results	No	
+British Columbia	Cloverdale--Langley City	Tamara Jansen	Conservative	20,772	John Aldag	Liberal	19,470	55,058	1,302	2.36 %	Preliminary results	No	
+British Columbia	Coquitlam--Port Coquitlam	Ron McKinnon	Liberal	19,614	Nicholas Insley	Conservative	19,275	56,634	339	0.6 %	Preliminary results	No	
+British Columbia	Courtenay--Alberni	Gord Johns	NDP-New Democratic Party	29,407	Byron Horner	Conservative	23,516	71,173	5,891	8.28 %	Preliminary results	No	
+British Columbia	Cowichan--Malahat--Langford	Alistair MacGregor	NDP-New Democratic Party	23,095	Alana DeLong	Conservative	16,456	63,802	6,639	10.41 %	Preliminary results	No	
+British Columbia	Delta	Carla Qualtrough	Liberal	21,969	Tanya Corbet	Conservative	17,638	53,288	4,331	8.13 %	Preliminary results	No	
+British Columbia	Esquimalt--Saanich--Sooke	Randall Garrison	NDP-New Democratic Party	23,516	David Merner	Green Party	18,135	69,003	5,381	7.8 %	Preliminary results	No	
+British Columbia	Fleetwood--Port Kells	Ken Hardie	Liberal	18,149	Shinder Purewal	Conservative	16,347	48,194	1,802	3.74 %	Preliminary results	No	
+British Columbia	Kamloops--Thompson--Cariboo	Cathy McLeod	Conservative	32,057	Terry Lake	Liberal	19,543	71,703	12,514	17.45 %	Preliminary results	No	
+British Columbia	Kelowna--Lake Country	Tracy Gray	Conservative	31,037	Stephen Fuhr	Liberal	22,150	67,865	8,887	13.1 %	Preliminary results	No	
+British Columbia	Kootenay--Columbia	Rob Morrison	Conservative	29,893	Wayne Stetski	NDP-New Democratic Party	22,707	66,327	7,186	10.83 %	Preliminary results	No	
+British Columbia	Langley--Aldergrove	Tako Van Popta	Conservative	28,953	Leon Jensen	Liberal	15,700	61,537	13,253	21.54 %	Preliminary results	No	
+British Columbia	Mission--Matsqui--Fraser Canyon	Brad Vis	Conservative	19,271	Jati Sidhu	Liberal	12,022	45,743	7,249	15.85 %	Preliminary results	No	
+British Columbia	Nanaimo--Ladysmith	Paul Manly	Green Party	24,537	John Hirst	Conservative	18,447	71,134	6,090	8.56 %	Preliminary results	No	
+British Columbia	New Westminster--Burnaby	Peter Julian	NDP-New Democratic Party	23,022	Will Davis	Liberal	12,240	52,108	10,782	20.69 %	Preliminary results	No	
+British Columbia	North Island--Powell River	Rachel Blaney	NDP-New Democratic Party	23,481	Shelley Downey	Conservative	20,131	62,126	3,350	5.39 %	Preliminary results	No	
+British Columbia	North Okanagan--Shuswap	Mel Arnold	Conservative	35,753	Cindy Derkaz	Liberal	16,626	73,273	19,127	26.1 %	Preliminary results	No	
+British Columbia	North Vancouver	Jonathan Wilkinson	Liberal	26,402	Andrew Saxton	Conservative	16,775	61,874	9,627	15.56 %	Preliminary results	No	
+British Columbia	Pitt Meadows--Maple Ridge	Marc Dalton	Conservative	19,501	Dan Ruimy	Liberal	15,957	53,707	3,544	6.6 %	Preliminary results	No	
+British Columbia	Port Moody--Coquitlam	Nelly Shin	Conservative	16,588	Bonita Zarrillo	NDP-New Democratic Party	16,255	52,929	333	0.63 %	Preliminary results	No	
+British Columbia	Prince George--Peace River--Northern Rockies	Bob Zimmer	Conservative	38,157	Mavis Erickson	Liberal	6,304	54,597	31,853	58.34 %	Preliminary results	No	
+British Columbia	Richmond Centre	Alice Wong	Conservative	18,791	Steven Kou	Liberal	10,824	38,142	7,967	20.89 %	Preliminary results	No	
+British Columbia	Saanich--Gulf Islands	Elizabeth May	Green Party	32,326	David Busch	Conservative	13,507	66,309	18,819	28.38 %	Preliminary results	No	
+British Columbia	Skeena--Bulkley Valley	Taylor Bachrach	NDP-New Democratic Party	16,670	Claire Rattée	Conservative	13,637	40,795	3,033	7.43 %	Preliminary results	No	
+British Columbia	South Okanagan--West Kootenay	Richard Cannings	NDP-New Democratic Party	24,304	Helena Konanz	Conservative	23,508	66,761	796	1.19 %	Preliminary results	No	
+British Columbia	South Surrey--White Rock	Kerry-Lynne Findlay	Conservative	24,044	Gordie Hogg	Liberal	21,319	57,120	2,725	4.77 %	Preliminary results	No	
+British Columbia	Steveston--Richmond East	Kenny Chiu	Conservative	17,193	Joe Peschisolido	Liberal	14,397	41,084	2,796	6.81 %	Preliminary results	No	
+British Columbia	Surrey Centre	Randeep Singh Sarai	Liberal	15,266	Sarjit Singh Saran	NDP-New Democratic Party	11,166	40,825	4,100	10.04 %	Preliminary results	No	
+British Columbia	Surrey--Newton	Sukh Dhaliwal	Liberal	18,328	Harjit Singh Gill	NDP-New Democratic Party	11,854	40,658	6,474	15.92 %	Preliminary results	No	
+British Columbia	Vancouver Centre	Hedy Fry	Liberal	22,317	Breen Ouellette	NDP-New Democratic Party	12,582	52,950	9,735	18.39 %	Preliminary results	No	
+British Columbia	Vancouver East	Jenny Kwan	NDP-New Democratic Party	28,473	Kyle Demes	Liberal	9,804	54,222	18,669	34.43 %	Preliminary results	No	
+British Columbia	Vancouver Granville	Jody Wilson-Raybould	Independent	16,537	Taleeb Noormohamed	Liberal	13,637	51,202	2,900	5.66 %	Preliminary results	No	
+British Columbia	Vancouver Kingsway	Don Davies	NDP-New Democratic Party	21,150	Tamara Taggart	Liberal	10,012	43,251	11,138	25.75 %	Preliminary results	No	
+British Columbia	Vancouver Quadra	Joyce Murray	Liberal	21,398	Kathleen Dixon	Conservative	13,814	49,314	7,584	15.38 %	Preliminary results	No	
+British Columbia	Vancouver South	Harjit S. Sajjan	Liberal	17,442	Wai Young	Conservative	14,222	42,407	3,220	7.59 %	Preliminary results	No	
+British Columbia	Victoria	Laurel Collins	NDP-New Democratic Party	23,290	Racelle Kooy	Green Party	20,846	70,073	2,444	3.49 %	Preliminary results	No	
+British Columbia	West Vancouver--Sunshine Coast--Sea to Sky Country	Patrick Weiler	Liberal	22,135	Gabrielle Loren	Conservative	17,106	63,501	5,029	7.92 %	Preliminary results	No	
+Yukon	Yukon	Larry Bagnell	Liberal	6,849	Jonas Jacot Smith	Conservative	6,777	20,490	72	0.35 %	Preliminary results	No	
+Northwest Territories	Northwest Territories	Michael McLeod	Liberal	6,638	Yanik D'Aigle	Conservative	4,279	16,588	2,359	14.22 %	Preliminary results	No	
+Nunavut	Nunavut	Mumilaaq Qaqqaq	NDP-New Democratic Party	3,717	Megan Pizzo Lyall	Liberal	2,798	9,031	919	10.18 %	Preliminary results	No	
+This data is updated as validated results and judicial recounts become available. The status for each electoral district can be: preliminary results are from election night; validated results are provided by the returning officers during the week following the vote; judicially certified results are published if a recount has been done in the electoral district.
